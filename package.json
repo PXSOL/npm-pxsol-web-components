@@ -18,8 +18,8 @@
     "license": "MIT",
     "peerDependencies": {
     "next": "^15.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
     },
     "devDependencies": {
     "next": "^15.0.0",
