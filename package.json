@@ -4,7 +4,7 @@
     "description": "Componentes compartidos entre proyectos",
     "main": "index.ts",
     "types": "index.d.ts",
-    "files": ["src"],
+    "files": ["dist"],
     "scripts": {
       "build": "tsc"
     },
