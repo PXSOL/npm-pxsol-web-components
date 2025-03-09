@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import "@/components/lpComponents/index.css"
-
 
 export const Header:FunctionComponent = ()=>{
 
