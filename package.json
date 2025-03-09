@@ -4,15 +4,29 @@
     "description": "Componentes compartidos entre proyectos",
     "main": "index.ts",
     "types": "index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
-      "build": "tsc"
+        "build": "tsc"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/elippser/lp-components.git"
+        "type": "git",
+        "url": "https://github.com/elippser/lp-components.git"
     },
     "author": "Tu Nombre",
-    "license": "MIT"
-  }
-  
+    "license": "MIT",
+    "peerDependencies": {
+    "next": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+    "next": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+    }
+}
