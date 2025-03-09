@@ -109,7 +109,7 @@ export const Header:FunctionComponent = ()=>{
                         </li>
                     </ul>
 
-                    <button className="btn btn-primary">Comenzar Ahora</button>
+                    <button className="btn btn-primary">Comenzar cuando pinte</button>
                 </nav>
             </div>
         </header>
