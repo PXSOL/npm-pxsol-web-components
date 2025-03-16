@@ -1,6 +1,6 @@
 {
   "name": "lp-components-1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Librería de componentes reutilizables para proyectos Next.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
