@@ -1,39 +1,32 @@
 {
   "name": "lp-components-1",
-  "version": "1.1.0",
-  "description": "Librería de componentes reutilizables para proyectos Next.js",
+  "version": "1.1.1",
+  "description": "Componentes reutilizables para React y Next.js",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": [
+    "dist/styles/index.css"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": ">=15.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "files": [
+    "dist",
+    "dist/styles/index.css"
+  ],
   "scripts": {
     "build": "tsc && cp -r src/styles dist/",
     "prepare": "npm run build",
     "dev": "tsc --watch",
     "pack": "npm pack"
-  },
-  "files": [
-    "dist",
-    "src/components",
-    "src/styles/index.css",
-    "src/index.ts"
-  ],
-  "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.17.24",
-    "@types/react": "^18.0.28",
-    "typescript": "^5.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tu-usuario/lp-components-1.git"
-  },
-  "author": "Tu Nombre",
-  "license": "MIT"
+  }
 }

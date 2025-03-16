@@ -1,13 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.componentsList = void 0;
-const About_1 = require("./components/About");
-const Cta_1 = require("./components/Cta");
-const Hero_1 = require("./components/Hero");
-const WidgetChat_1 = require("./components/WidgetChat");
-const Header_1 = require("./components/Header");
-exports.componentsList = [
-    { name: "Header", component: Header_1.Header, props: {
+import { About } from "./components/About";
+import { Cta } from "./components/Cta";
+import { Hero } from "./components/Hero";
+import { WidgetChat } from "./components/WidgetChat";
+import { Header } from "./components/Header";
+export const componentsList = [
+    { name: "Header", component: Header, props: {
             titleHero: {
                 name: "Titulo",
                 type: "title",
@@ -17,7 +14,7 @@ exports.componentsList = [
         }
     },
     { name: "Hero",
-        component: Hero_1.Hero,
+        component: Hero,
         props: {
             titleHero: {
                 name: "Titulo",
@@ -65,7 +62,7 @@ exports.componentsList = [
             }
         }
     },
-    { name: "About", component: About_1.About },
-    { name: "Cta", component: Cta_1.Cta },
-    { name: "WidgetChat", component: WidgetChat_1.WidgetChat },
+    { name: "About", component: About },
+    { name: "Cta", component: Cta },
+    { name: "WidgetChat", component: WidgetChat },
 ];
