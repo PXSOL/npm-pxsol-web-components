@@ -61,7 +61,7 @@ export const Hero: FunctionComponent = (props: any)=>{
             <div className="container">
                 <div className="hero-content">
                     <h1 className="h1 hero-title">
-                      xx{props.titleHero?.content || "Título por defecto"}
+                      .{props.titleHero?.content || "Título por defecto"}
                     </h1>
 
                     <p className="hero-text">
