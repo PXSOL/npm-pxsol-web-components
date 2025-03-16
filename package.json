@@ -5,11 +5,16 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "build": "tsc && cp -r src/styles dist/",
+    "prepare": "npm run build",
+    "dev": "tsc --watch",
+    "pack": "npm pack"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/components",
+    "src/styles/index.css",
+    "src/index.ts"
   ],
   "dependencies": {
     "next": "^14.0.0",
