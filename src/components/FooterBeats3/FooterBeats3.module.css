@@ -74,7 +74,7 @@
   margin-bottom: var(--mb-2-5);
 }
 
-.section__title-gradient {
+.section__titleGradient {
   background: var(--text-gradient);
   color: transparent;
   -webkit-background-clip: text;
@@ -156,7 +156,7 @@
   column-gap: 1.25rem;
 }
 
-.footer__social-link {
+.footer__socialLink {
   display: inline-flex;
   color: var(--white-color);
   background-color: var(--container-color);
@@ -174,7 +174,7 @@
   text-align: center;
 }
 
-.footer__copy-link {
+.footer__copyLink {
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
 }

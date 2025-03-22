@@ -3,7 +3,7 @@ import styles from "./HeaderBeats3.module.css"
 const HeaderBeats3 = ()=>{
     return(
       <>
-        <div className="spacing-top-header">
+        <div className={styles.spacingTopHeader}>
         </div>
         <header className={styles.header} id="header">
         <nav className={`${styles.nav} ${styles.container}`}>

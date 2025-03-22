@@ -74,7 +74,7 @@
   margin-bottom: var(--mb-2-5);
 }
 
-.section__title-gradient {
+.section__titleGradient {
   background: var(--text-gradient);
   color: transparent;
   -webkit-background-clip: text;
