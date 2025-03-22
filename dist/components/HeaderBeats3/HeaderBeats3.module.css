@@ -74,7 +74,7 @@
     margin-bottom: var(--mb-2-5);
   }
   
-  .section__title-gradient {
+  .section__titleGradient {
     background: var(--text-gradient);
     color: transparent;
     -webkit-background-clip: text;
@@ -109,7 +109,7 @@
     border-bottom: 1px solid rgb(40, 40, 40);
   }
   
-  .spacing-top-header{
+  .spacingTopHeader{
       background-color: #0b0b0b;
       width: 100%;
       height: 45px;
@@ -177,17 +177,17 @@
   }
   
   /* show menu */
-  .show-menu {
+  .showMenu {
     top: 0;
   }
   
   /* Change background header */
-  .scroll-header {
+  .scrollHeader {
     background-color: var(--body-color);
   }
   
   /* Active link */
-  .active-link {
+  .activeLink {
     background: var(--white-color);
     color: transparent;
     -webkit-background-clip: text;
@@ -215,7 +215,7 @@
     .nav {
       height: 60px;
     }
-    .spacing-top-header{
+    .spacingTopHeader{
       height: 60px;
     }
     .nav__logo {
