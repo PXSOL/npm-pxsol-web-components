@@ -27,6 +27,9 @@
     "jsx": "react-jsx",
     "strict": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "src/custom.d.ts"  // Asegúrate de que el archivo de declaraciones esté incluido
+  ],
   "exclude": ["node_modules", "dist"]
 }

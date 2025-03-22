@@ -56,4 +56,8 @@ export declare const componentsList: ({
     name: string;
     component: import("react").FunctionComponent<{}>;
     props?: undefined;
+} | {
+    name: string;
+    component: () => import("react/jsx-runtime").JSX.Element;
+    props?: undefined;
 })[];
