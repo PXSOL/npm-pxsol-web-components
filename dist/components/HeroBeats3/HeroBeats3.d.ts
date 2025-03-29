@@ -1,2 +1,2 @@
-declare const HeroBeats3: () => import("react/jsx-runtime").JSX.Element;
+declare const HeroBeats3: React.FC<any>;
 export default HeroBeats3;

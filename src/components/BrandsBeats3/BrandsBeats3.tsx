@@ -1,14 +1,17 @@
+import React from "react";
 import styles from "./BrandsBeats3.module.css"
+import Image from "next/image";
 
-export const BrandsBeats3 = ()=>{
+export const BrandsBeats3: React.FC<any> = (props)=>{
 
     return(
       <section className={`${styles.sponsor} ${styles.section}`}>
         <div className={`${styles.sponsor__container} ${styles.container} ${styles.grid}`}>
-          <img src="https://headpones-lp.vercel.app/assets/img/sponsor1.png" alt="" className={styles.sponsor__img} />
-          <img src="https://headpones-lp.vercel.app/assets/img/sponsor2.png" alt="" className={styles.sponsor__img} />
-          <img src="https://headpones-lp.vercel.app/assets/img/sponsor3.png" alt="" className={styles.sponsor__img} />
-          <img src="https://headpones-lp.vercel.app/assets/img/sponsor4.png" alt="" className={styles.sponsor__img} />
+          {props.groupTextHero.content.map((item: any, index: any)=>{
+            return(
+              <Image width={200} height={80} key={index} src={item.imgBrand.imageSrc} alt={item.brandName.name} className={styles.sponsor__img}></Image>
+            )
+          })}
         </div>
       </section>
     )

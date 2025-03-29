@@ -1,32 +1,40 @@
+import Image from "next/image";
 import styles from "./HeroBeats3.module.css"
+import Link from "next/link";
 
-const HeroBeats3 = ()=>{
+const HeroBeats3: React.FC<any> = (props)=>{
 
     return(
       <section className={`${styles.home} ${styles.section}`} id="home">
         <div className={`${styles.home__container} ${styles.container} ${styles.grid}`}>
           <div>
-            <img src="https://headpones-lp.vercel.app/assets/img/home.png" alt="" className={styles.home__img} />
+            <Image height={750} width={400} src={props.imageHero.imageSrc} alt={props.imageHero.name} className={styles.home__img}></Image>
           </div>
 
           <div className={styles.home__data}>
             <div className={styles.home__header}>
-              <h1 className={styles.home__title}>On ear</h1>
-              <h2 className={styles.home__subtitle}>Beats 3</h2>
+              <h1 className={styles.home__title}>
+                {props.titleHero.content}
+              </h1>
+              <h2 className={styles.home__subtitle}>{props.subtitleHero.content}</h2>
             </div>
 
             <div className={styles.home__footer}>
-              <h3 className={styles.home__titleDescription}>Overview</h3>
+              <h3 className={styles.home__titleDescription}>
+                {props.subtitleTextHero.content}
+              </h3>
               <p className={styles.home__description}>
-                Enjoy award-winning Beats sound with wireless listening freedom and a sleek,
-                streamlined design with comfortable padded earphones, delivering first-rate playback.
+                {props.TextHero.content}
               </p>
-              <a href="#" className={`${styles.button} ${styles.button__flex}`}>
+              <Link href={props.ctaButtonHero.content.link} className={`${styles.button} ${styles.button__flex}`}>
                 <span className={styles.button__flex}>
-                  <i className={`ri-shopping-bag-line ${styles.button__icon}`}></i> Add to Bag
+                  <i className={`ri-shopping-bag-line ${styles.button__icon}`}></i>
+                  {props.ctaButtonHero.content.textButton}
                 </span>
-                <span className={styles.home__price}>$299</span>
-              </a>
+                <span className={styles.home__price}>
+                  {props.priceButton.content}
+                </span>
+              </Link>
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --biggest-font-size: 7.5rem;
+    --biggest-font-size: 6.5rem;
     --bigger-font-size: 4.5rem;
     --big-font-size: 4rem;
     --h2-font-size: 1.5rem;
@@ -68,17 +68,41 @@
   padding: 4rem 0 2rem;
 }
 
-.section__title {
+.sectionTitle {
   font-size: var(--bigger-font-size);
   text-align: center;
   margin-bottom: var(--mb-2-5);
 }
 
-.section__titleGradient {
+.sectionTitleGradient {
   background: var(--text-gradient);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 1rem 1.25rem;
+  border-radius: .5rem;
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--black-color-alt);
+}
+
+.buttonIcon {
+  font-size: 1.2rem;
+}
+
+.buttonFlex {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .75rem;
 }
 
 /*=============== LAYOUT ===============*/
@@ -97,23 +121,23 @@
 }
 
 /*=============== DISCOUNT ===============*/
-.discount__container {
+.discountContainer {
   position: relative;
   background-color: var(--container-color);
   padding: 2rem 1.5rem;
   border-radius: .75rem;
 }
 
-.discount__title {
+.discountTitle {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-75);
 }
 
-.discount__description {
+.discountDescription {
   margin-bottom: var(--mb-1);
 }
 
-.discount__img {
+.discountImg {
   width: 300px;
   position: absolute;
   top: 4rem;
@@ -127,7 +151,7 @@
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
   }
-  .section__title {
+  .sectionTitle {
     font-size: var(--big-font-size);
   }
 }
@@ -135,10 +159,10 @@
 /* For medium devices */
 @media screen and (min-width: 576px) {
 
-  .discount__img {
+  .discountImg {
     position: initial;
   }
-  .discount__container {
+  .discountContainer {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
@@ -151,17 +175,17 @@
   .section {
     padding: 70px 0px;
   }
-  .discount__container {
+  .discountContainer {
     grid-template-columns: 250px max-content;
     justify-content: center;
     column-gap: 5rem;
     padding: 3rem 0;
   }
-  .discount__title {
+  .discountTitle {
     font-size: var(--h2-font-size);
     margin-bottom: var(--mb-1);
   }
-  .discount__description {
+  .discountDescription {
     margin-bottom: var(--mb-2);
   }
 }
@@ -172,7 +196,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .discount__img {
+  .discountImg {
     width: 350px;
   }
 }

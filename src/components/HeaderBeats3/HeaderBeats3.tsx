@@ -1,30 +1,36 @@
+import React from "react";
 import styles from "./HeaderBeats3.module.css"
+import Image from "next/image";
+import Link from "next/link";
 
-const HeaderBeats3 = ()=>{
+export const HeaderBeats3: React.FC<any> = (props)=>{
     return(
       <>
         <div className={styles.spacingTopHeader}>
         </div>
         <header className={styles.header} id="header">
         <nav className={`${styles.nav} ${styles.container}`}>
-          <a href="#" className={styles.nav__logo}>
-            <img src="https://headpones-lp.vercel.app/assets/img/logo.png" alt="" />
-          </a>
+          <Link href="/" className={styles.nav__logo}>
+            <Image height={60} width={60} src={props.logoHeader.imageSrc} alt={props.logoHeader.name}></Image>
+          </Link>
 
           <div className={styles.nav__menu} id="nav-menu">
             <ul className={styles.nav__list}>
-              <li className={styles.nav__item}>
-                <a href="#home" className={`${styles.nav__link} ${styles.activeLink}`}>Home</a>
-              </li>
-              <li className={styles.nav__item}>
-                <a href="#specs" className={styles.nav__link}>Specs</a>
-              </li>
-              <li className={styles.nav__item}>
-                <a href="#case" className={styles.nav__link}>Case</a>
-              </li>
-              <li className={styles.nav__item}>
-                <a href="#products" className={styles.nav__link}>Products</a>
-              </li>
+            {props.groupTextHero.content.map((item: any, index: any)=>{
+              return(
+                <li key={index} className={styles.nav__item}>
+                  <Link
+                    href={item.ctaButtonHero.content.link} 
+                    className={`
+                        ${styles.nav__link} 
+                        // {styles.activeLink}
+                      `}
+                    >
+                    {item.ctaButtonHero.content.textButton}
+                  </Link>
+                </li>
+              )
+            })}
             </ul>
 
             <div className={styles.nav__close} id="nav-close">

@@ -44,7 +44,7 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --biggest-font-size: 7.5rem;
+    --biggest-font-size: 7rem;
     --bigger-font-size: 4.5rem;
     --big-font-size: 4rem;
     --h2-font-size: 1.5rem;
@@ -74,7 +74,7 @@
   margin-bottom: var(--mb-2-5);
 }
 
-.section__titleGradient {
+.section__title-gradient {
   background: var(--text-gradient);
   color: transparent;
   -webkit-background-clip: text;
@@ -137,7 +137,7 @@
     margin-bottom: var(--mb-2-5);
 }
 
-.home__title-description {
+.home__titleDescription {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1);

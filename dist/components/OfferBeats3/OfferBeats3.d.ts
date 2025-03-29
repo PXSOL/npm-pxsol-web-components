@@ -1,2 +1,2 @@
-export declare const OfferBeats3: () => import("react/jsx-runtime").JSX.Element;
+export declare const OfferBeats3: React.FC<any>;
 export default OfferBeats3;

@@ -1,2 +1,3 @@
-export declare const ProductsBeats3: () => import("react/jsx-runtime").JSX.Element;
+import React from "react";
+export declare const ProductsBeats3: React.FC<any>;
 export default ProductsBeats3;

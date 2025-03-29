@@ -1,17 +1,26 @@
-export const OfferBeats3 = ()=>{
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./OfferBeats3.module.css"
+
+export const OfferBeats3: React.FC<any> = (props)=>{
 
     return(
-        <section className="discount section">
-          <div className="discount__container container grid">
-            <div className="discount__animate">
-              <h2 className="discount__title">Immerse yourself in <br /> your music</h2>
-              <p className="discount__description">Get it now, up to 50% off.</p>
-              <a href="#" className="button button--flex">
-                <i className="ri-shopping-bag-line button__icon"></i> Shop Now
-              </a>
+        <section className={`${styles.discount} ${styles.section}`}>
+          <div className={`${styles.discountContainer} ${styles.container} ${styles.grid}`}>
+            <div className={styles.discountAnimate}>
+              <h2 className={styles.discountTitle}>
+                {props.titleOffer.content}
+              </h2>
+              <p className={styles.discountDescription}>
+                {props.TextSection.content}
+              </p>
+              <Link href={props.ctaButtonCard.content.link} className={`${styles.button} ${styles.buttonFlex}`}>
+                <i className={`ri-shopping-bag-line ${styles.buttonIcon}`}></i>
+                 {props.ctaButtonCard.content.textButton}
+              </Link>
             </div>
 
-            <img src="https://headpones-lp.vercel.app/assets/img/discount.png" alt="" className="discount__img" />
+            <Image height={500} width={500} src={props.imgSection.imageSrc} alt={props.titleOffer.content} className={styles.discountImg}></Image>
           </div>
         </section>
     )

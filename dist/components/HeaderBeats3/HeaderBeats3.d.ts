@@ -1,2 +1,3 @@
-declare const HeaderBeats3: () => import("react/jsx-runtime").JSX.Element;
+import React from "react";
+export declare const HeaderBeats3: React.FC<any>;
 export default HeaderBeats3;

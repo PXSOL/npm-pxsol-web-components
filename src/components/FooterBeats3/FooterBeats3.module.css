@@ -44,7 +44,7 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --biggest-font-size: 7.5rem;
+    --biggest-font-size: 6.5rem;
     --bigger-font-size: 4.5rem;
     --big-font-size: 4rem;
     --h2-font-size: 1.5rem;
@@ -63,22 +63,34 @@
   color: var(--text-color);
 }
 
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 1rem 1.25rem;
+  border-radius: .5rem;
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--black-color-alt);
+}
+
+.button__icon {
+  font-size: 1.2rem;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .75rem;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4rem 0 2rem;
-}
-
-.section__title {
-  font-size: var(--bigger-font-size);
-  text-align: center;
-  margin-bottom: var(--mb-2-5);
-}
-
-.section__titleGradient {
-  background: var(--text-gradient);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 /*=============== LAYOUT ===============*/
@@ -165,7 +177,7 @@
   font-size: 1rem;
 }
 
-.footer__social-link:hover {
+.footer__socialLink:hover {
   background-color: var(--black-color);
 }
 
