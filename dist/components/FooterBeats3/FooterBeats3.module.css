@@ -1,81 +1,26 @@
 /*=============== GOOGLE FONTS ===============*/
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --header-height: 3rem;
-  /*========== Colors ==========*/
-  --hue-color: 206;
-  --black-color: hsl(var(--hue-color), 4%, 4%);
-  --black-color-alt: hsl(var(--hue-color), 4%, 8%);
-  --title-color: hsl(var(--hue-color), 4%, 95%);
-  --text-color: hsl(var(--hue-color), 4%, 75%);
-  --text-color-light: hsl(var(--hue-color), 4%, 65%);
-  --white-color: #FFF;
-  --body-color: hsl(var(--hue-color), 4%, 6%);
-  --container-color: hsl(var(--hue-color), 4%, 10%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
-  --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
-  --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
-  /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 5rem;
-  --bigger-font-size: 3.5rem;
-  --big-font-size: 2.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-  --text-line-height: 2rem;
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  /*========== Margenes Bottom ==========*/
-  --mb-0-5: .5rem;
-  --mb-0-75: .75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-@media screen and (min-width: 968px) {
-  :root {
-    --biggest-font-size: 6.5rem;
-    --bigger-font-size: 4.5rem;
-    --big-font-size: 4rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
-}
 
 /*=============== BASE ===============*/
 .section {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.938rem;
+  background-color: hsl(206, 4%, 6%);
+  color: hsl(206, 4%, 75%);
 }
-
 
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: hsl(206, 4%, 4%);
+  color: #FFF;
   padding: 1rem 1.25rem;
-  border-radius: .5rem;
-  transition: .3s;
+  border-radius: 0.5rem;
+  transition: 0.3s;
 }
 
 .button:hover {
-  background-color: var(--black-color-alt);
+  background-color: hsl(206, 4%, 8%);
 }
 
 .button__icon {
@@ -85,7 +30,7 @@
 .button__flex {
   display: inline-flex;
   align-items: center;
-  column-gap: .75rem;
+  column-gap: 0.75rem;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -100,8 +45,8 @@
 
 .container {
   max-width: 968px;
-  margin-left: var(--mb-1-5);
-  margin-right: var(--mb-1-5);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .grid {
@@ -109,8 +54,8 @@
 }
 
 /*=============== FOOTER ===============*/
-.footer{
-    background-color: #0b0b0b;
+.footer {
+  background-color: #0b0b0b;
 }
 
 .footer__container {
@@ -123,44 +68,44 @@
 }
 
 .footer__title {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-  margin-bottom: var(--mb-1);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .footer__links {
   display: flex;
   flex-direction: column;
-  row-gap: .5rem;
+  row-gap: 0.5rem;
 }
 
 .footer__link {
-  color: var(--text-color);
+  color: hsl(206, 4%, 75%);
 }
 
 .footer__link:hover {
-  color: var(--white-color);
+  color: #FFF;
 }
 
 .footer__form {
   display: flex;
-  column-gap: .5rem;
-  background-color: var(--container-color);
-  padding: .5rem .75rem;
-  border-radius: .5rem;
-  margin-bottom: var(--mb-2);
+  column-gap: 0.5rem;
+  background-color: hsl(206, 4%, 10%);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .footer__input {
-  background-color: var(--container-color);
+  background-color: hsl(206, 4%, 10%);
   width: 90%;
-  color: var(--white-color);
+  color: #FFF;
 }
 
 .footer__input::placeholder {
-  color: var(--text-color);
-  font-size: var(--normal-font-size);
-  font-family: var(--body-font);
+  color: hsl(206, 4%, 75%);
+  font-size: 0.938rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer__social {
@@ -170,15 +115,15 @@
 
 .footer__socialLink {
   display: inline-flex;
-  color: var(--white-color);
-  background-color: var(--container-color);
-  padding: .5rem;
-  border-radius: .25rem;
+  color: #FFF;
+  background-color: hsl(206, 4%, 10%);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   font-size: 1rem;
 }
 
 .footer__socialLink:hover {
-  background-color: var(--black-color);
+  background-color: hsl(206, 4%, 4%);
 }
 
 .footer__copy {
@@ -187,16 +132,15 @@
 }
 
 .footer__copyLink {
-  font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
+  font-size: 0.75rem;
+  color: hsl(206, 4%, 65%);
 }
 
 /*=============== MEDIA QUERIES ===============*/
-/* For small devices */
 @media screen and (max-width: 340px) {
   .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -208,11 +152,10 @@
     padding: 70px 0px;
   }
   .footer__container {
-    grid-template-columns: .4fr .7fr .7fr 1fr;
+    grid-template-columns: 0.4fr 0.7fr 0.7fr 1fr;
   }
 }
 
-/* For large devices */
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: auto;
