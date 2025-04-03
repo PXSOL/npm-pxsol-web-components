@@ -21,6 +21,7 @@ export declare const componentsList: ({
                 };
             }[];
         };
+        backgroundHero?: undefined;
         titleHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
@@ -46,29 +47,89 @@ export declare const componentsList: ({
     name: string;
     component: import("react").FC<any>;
     props: {
+        backgroundHero: {
+            name: string;
+            type: string;
+            dataType: string;
+            styleData: {
+                backgroundColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+            };
+        };
         titleHero: {
             name: string;
             type: string;
             dataType: string;
             content: string;
+            styleData: {
+                titleColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                titleSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         subtitleHero: {
             name: string;
             type: string;
             dataType: string;
             content: string;
+            styleData: {
+                titleTwoColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                titleTwoSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         subtitleTextHero: {
             name: string;
             type: string;
             dataType: string;
             content: string;
+            styleData: {
+                subtitleColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                subtitleSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         TextHero: {
             name: string;
             type: string;
             dataType: string;
             content: string;
+            styleData: {
+                textColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                textSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         ctaButtonHero: {
             name: string;
@@ -77,17 +138,56 @@ export declare const componentsList: ({
                 textButton: string;
                 link: string;
             };
+            styleData: {
+                textColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                backgroundColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                buttonTextSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         priceButton: {
             name: string;
             type: string;
             dataType: string;
             content: string;
+            styleData: {
+                priceColor: {
+                    name: string;
+                    styleType: string;
+                    color: string;
+                };
+                buttonTextSize: {
+                    name: string;
+                    styleType: string;
+                    size: string;
+                };
+            };
         };
         imageHero: {
             name: string;
             type: string;
             imageSrc: string;
+            styleData: {
+                filterImage: {
+                    name: string;
+                    styleType: string;
+                    value: {
+                        name: string;
+                        value: string;
+                    }[];
+                };
+            };
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
@@ -127,6 +227,7 @@ export declare const componentsList: ({
             }[];
         };
         logoHeader?: undefined;
+        backgroundHero?: undefined;
         titleHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
@@ -157,6 +258,7 @@ export declare const componentsList: ({
             type: string;
             dataType: string;
             content: string;
+            styleData?: undefined;
         };
         imgSection: {
             name: string;
@@ -189,6 +291,7 @@ export declare const componentsList: ({
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
+        backgroundHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
         TextHero?: undefined;
@@ -216,6 +319,7 @@ export declare const componentsList: ({
             type: string;
             dataType: string;
             content: string;
+            styleData?: undefined;
         };
         imgSection: {
             name: string;
@@ -235,9 +339,11 @@ export declare const componentsList: ({
                 textButton: string;
                 link: string;
             };
+            styleData?: undefined;
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
+        backgroundHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
         TextHero?: undefined;
@@ -286,6 +392,7 @@ export declare const componentsList: ({
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
+        backgroundHero?: undefined;
         titleHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
@@ -312,6 +419,7 @@ export declare const componentsList: ({
             type: string;
             dataType: string;
             content: string;
+            styleData?: undefined;
         };
         groupProductsSection: {
             name: string;
@@ -340,6 +448,7 @@ export declare const componentsList: ({
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
+        backgroundHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;
         TextHero?: undefined;
@@ -430,6 +539,7 @@ export declare const componentsList: ({
         };
         logoHeader?: undefined;
         groupTextHero?: undefined;
+        backgroundHero?: undefined;
         titleHero?: undefined;
         subtitleHero?: undefined;
         subtitleTextHero?: undefined;

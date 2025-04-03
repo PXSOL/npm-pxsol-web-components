@@ -1,6 +1,5 @@
 /*=============== BASE ===============*/
 .section {
-  font-family: 'Poppins', sans-serif;
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
   color: hsl(206, 4%, 75%);
@@ -72,9 +71,10 @@
 }
 
 .case__img {
-  width: 250px;
+  width: 270px;
   position: absolute;
-  left: -7rem;
+  left: -40%;
+
 }
 
 .case__description {

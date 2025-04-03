@@ -59,48 +59,147 @@ export const componentsList = [
         name: "Hero - Beats 3",
         component: HeroBeats3,
         props: {
+            backgroundHero: {
+                name: "Background section",
+                type: "section",
+                dataType: "section",
+                styleData: {
+                    backgroundColor: {
+                        name: "Background color",
+                        styleType: "color",
+                        color: "#000",
+                    },
+                }
+            },
             titleHero: {
                 name: "Title",
                 type: "title",
                 dataType: "flatText",
-                content: "Lorem"
+                content: "Lorem",
+                styleData: {
+                    titleColor: {
+                        name: "Title 1 color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    titleSize: {
+                        name: "Size title",
+                        styleType: "fontSize",
+                        size: "70px",
+                    }
+                }
             },
             subtitleHero: {
+                name: "Title 2",
+                type: "title",
+                dataType: "flatText",
+                content: "Ipsum",
+                styleData: {
+                    titleTwoColor: {
+                        name: "Title 2 color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    titleTwoSize: {
+                        name: "Size title",
+                        styleType: "fontSize",
+                        size: "50px",
+                    }
+                }
+            },
+            subtitleTextHero: {
                 name: "Subtitle",
                 type: "title",
                 dataType: "flatText",
-                content: "Ipsum"
-            },
-            subtitleTextHero: {
-                name: "Subtitle 2",
-                type: "title",
-                dataType: "flatText",
-                content: "Lorem ipsum"
+                content: "Lorem ipsum",
+                styleData: {
+                    subtitleColor: {
+                        name: "Subtitle color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    subtitleSize: {
+                        name: "Subtitle size",
+                        styleType: "fontSize",
+                        size: "25px",
+                    }
+                }
             },
             TextHero: {
                 name: "Section text",
                 type: "subtitle",
                 dataType: "flatText",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tempore nulla odio ipsa. Minus in consectetur harum esse deserunt iure maiores eligendi pariatur"
+                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tempore nulla odio ipsa. Minus in consectetur harum esse deserunt iure maiores eligendi pariatur",
+                styleData: {
+                    textColor: {
+                        name: "Section text color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    textSize: {
+                        name: "Section text size",
+                        styleType: "fontSize",
+                        size: "14px",
+                    }
+                }
             },
             ctaButtonHero: {
                 name: "Cta button",
                 type: "ctaButton",
                 content: {
                     textButton: "Offer",
-                    link: "https://your/link/here"
+                    link: "https://your/link/here",
+                },
+                styleData: {
+                    textColor: {
+                        name: "Cta color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    backgroundColor: {
+                        name: "Button background",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    buttonTextSize: {
+                        name: "Button font size",
+                        styleType: "fontSize",
+                        size: "14px",
+                    }
                 }
             },
             priceButton: {
                 name: "Offer Price",
                 type: "title",
                 dataType: "flatText",
-                content: "$99"
+                content: "$99",
+                styleData: {
+                    priceColor: {
+                        name: "Price color",
+                        styleType: "color",
+                        color: "#fff",
+                    },
+                    buttonTextSize: {
+                        name: "Price font size",
+                        styleType: "fontSize",
+                        size: "14px",
+                    }
+                }
             },
             imageHero: {
                 name: "Main image",
                 type: "imageSrc",
                 imageSrc: "https://headpones-lp.vercel.app/assets/img/home.png",
+                styleData: {
+                    filterImage: {
+                        name: "Filter image",
+                        styleType: "filterImage",
+                        value: [
+                            { name: "brightness", value: "0.5" },
+                            { name: "contrast", value: "0.5" }
+                        ],
+                    }
+                }
             },
         }
     },

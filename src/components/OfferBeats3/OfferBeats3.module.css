@@ -3,7 +3,6 @@
 
 /*=============== BASE ===============*/
 .section {
-  font-family: 'Poppins', sans-serif;
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
   color: hsl(206, 4%, 75%);
@@ -84,10 +83,10 @@
 }
 
 .discountImg {
+  position: relative;
   width: 300px;
-  position: absolute;
-  top: 4rem;
-  right: -11rem;
+  margin-inline: auto; 
+  margin-top: 3rem;
 }
 
 /*=============== MEDIA QUERIES ===============*/
@@ -130,6 +129,10 @@
   }
   .discountDescription {
     margin-bottom: 2rem;
+  }
+
+  .discountImg {
+    margin: 0;
   }
 }
 

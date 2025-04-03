@@ -1,6 +1,5 @@
 /*=============== BASE ===============*/
 .section {
-  font-family: 'Poppins', sans-serif;
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
   color: hsl(206, 4%, 75%);
@@ -18,10 +17,6 @@
 }
 
 .section__titleGradient {
-  background: linear-gradient(hsl(206, 4%, 24%), hsl(206, 4%, 8%));
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
   font-weight: 600;
 }
 
@@ -78,13 +73,20 @@
 
 @media screen and (max-width: 767px) {
   .nav__menu {
-      position: fixed;
-      background-color: hsl(206, 4%, 6%);
-      top: -100%;
-      left: 0;
-      width: 100%;
-      padding: 4rem 0 3rem;
-      transition: .4s;
+    position: fixed;
+    background-color: #0f0f10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 0 3rem;
+    transition: all .4s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav__menu.activeMenu {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -100,13 +102,11 @@
   font-weight: 600;
   color: #ffffff4f;
   transition: .4s;
+  padding: 10px;
 }
 
 .nav__link:hover {
-  background: #FFF;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  box-shadow: inset 0px -8px 0px -5px #ffffff9e;
 }
 
 .nav__close {

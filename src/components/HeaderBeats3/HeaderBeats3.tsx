@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const HeaderBeats3: React.FC<any> = (props)=>{
+
+    const [isActiveMenu, setIsActiveMenu] = React.useState(false);
+
     return(
       <>
         <div className={styles.spacingTopHeader}>
@@ -14,7 +17,7 @@ export const HeaderBeats3: React.FC<any> = (props)=>{
             <Image height={60} width={60} src={props.logoHeader.imageSrc} alt={props.logoHeader.name}></Image>
           </Link>
 
-          <div className={styles.nav__menu} id="nav-menu">
+          <div className={`${styles.nav__menu} ${isActiveMenu && styles.activeMenu}`} id="nav-menu">
             <ul className={styles.nav__list}>
             {props.groupTextHero.content.map((item: any, index: any)=>{
               return(
@@ -33,12 +36,12 @@ export const HeaderBeats3: React.FC<any> = (props)=>{
             })}
             </ul>
 
-            <div className={styles.nav__close} id="nav-close">
+            <div onClick={(()=>{setIsActiveMenu(false)})} className={styles.nav__close} id="nav-close">
               <i className="ri-close-line"></i>
             </div>
           </div>
 
-          <div className={styles.nav__toggle} id="nav-toggle">
+          <div onClick={(()=>{setIsActiveMenu(true)})} className={styles.nav__toggle} id="nav-toggle">
             <i className="ri-function-line"></i>
           </div>
         </nav>

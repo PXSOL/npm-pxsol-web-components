@@ -1,6 +1,5 @@
 /*=============== BASE ===============*/
 .section {
-  font-family: 'Poppins', sans-serif;
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
   color: hsl(206, 4%, 75%);
@@ -46,7 +45,7 @@
 
 .sponsor__container {
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  row-gap: 5rem;
+  row-gap: 3rem;
   justify-items: center;
   align-items: center;
 }
