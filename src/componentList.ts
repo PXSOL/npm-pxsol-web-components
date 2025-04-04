@@ -8,9 +8,7 @@ import ProductsBeats3 from "./components/ProductsBeats3/ProductsBeats3";
 import FooterBeats3 from "./components/FooterBeats3/FooterBeats3";
 
 export const componentsList = [
-
   // Beats 3 - coponents
-  
   { 
     name: "Header - Beats 3", 
     component: HeaderBeats3,

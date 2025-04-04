@@ -1,14 +1,9 @@
-/*=============== GOOGLE FONTS ===============*/
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
 
-/*=============== BASE ===============*/
 .section {
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
   color: hsl(206, 4%, 75%);
 }
-
-/*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
   background-color: hsl(206, 4%, 4%);

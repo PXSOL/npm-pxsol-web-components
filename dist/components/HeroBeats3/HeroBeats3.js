@@ -1,11 +1,14 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from "react";
 import Image from "next/image";
 import styles from "./HeroBeats3.module.css";
 import Link from "next/link";
 import { useMemo } from "react";
-const HeroBeats3 = (props) => {
+const HeroBeats3 = React.memo((props) => {
     const imageHeroStyles = useMemo(() => ({
-        filter: props.imageHero.styleData.filterImage.value.map((filter) => `${filter.name}(${filter.value})`).join(" "),
+        filter: props.imageHero.styleData.filterImage.value
+            .map((filter) => `${filter.name}(${filter.value})`)
+            .join(" "),
     }), [props.imageHero.styleData.filterImage.value]);
     const sectionStyles = useMemo(() => ({
         background: props.backgroundHero.styleData.backgroundColor.color,
@@ -35,6 +38,6 @@ const HeroBeats3 = (props) => {
         color: props.priceButton.styleData.priceColor.color,
         fontSize: props.priceButton.styleData.buttonTextSize.size,
     }), [props.priceButton.styleData.priceColor.color, props.priceButton.styleData.buttonTextSize.size]);
-    return (_jsx("section", { className: `${styles.home} ${styles.section}`, style: sectionStyles, id: "home", children: _jsxs("div", { className: `${styles.home__container} ${styles.container} ${styles.grid}`, children: [_jsx("div", { className: styles.home__img__container, children: _jsx(Image, { style: imageHeroStyles, height: 750, width: 400, src: props.imageHero.imageSrc, alt: props.imageHero.name, className: styles.home__img }) }), _jsxs("div", { className: styles.home__data, children: [_jsxs("div", { className: styles.home__header, children: [_jsx("h1", { className: `${styles.home__title}`, style: titleStyles, children: props.titleHero.content }), _jsx("h2", { className: styles.home__subtitle, style: subtitleStyles, children: props.subtitleHero.content })] }), _jsxs("div", { className: styles.home__footer, children: [_jsx("h3", { style: subtitleTextHeroStyles, className: styles.home__titleDescription, children: props.subtitleTextHero.content }), _jsx("p", { style: TextHeroStyles, className: styles.home__description, children: props.TextHero.content }), _jsxs(Link, { style: ctaButtonHeroStyles, href: props.ctaButtonHero.content.link, className: `${styles.button} ${styles.button__flex}`, children: [_jsxs("span", { className: styles.button__flex, children: [_jsx("i", { className: `ri-shopping-bag-line ${styles.button__icon}` }), props.ctaButtonHero.content.textButton] }), _jsx("span", { style: priceButtonStyles, className: styles.home__price, children: props.priceButton.content })] })] })] })] }) }));
-};
+    return (_jsx("section", { className: `${styles.home} ${styles.section}`, style: sectionStyles, id: "home", children: _jsxs("div", { className: `${styles.home__container} ${styles.container} ${styles.grid}`, children: [_jsx("div", { className: styles.home__img__container, children: _jsx(Image, { priority: true, style: imageHeroStyles, height: 650, width: 300, src: props.imageHero.imageSrc, alt: props.imageHero.name, className: styles.home__img, placeholder: "blur", blurDataURL: "/placeholder.png" }) }), _jsxs("div", { className: styles.home__data, children: [_jsxs("div", { className: styles.home__header, children: [_jsx("h1", { className: `${styles.home__title}`, style: titleStyles, children: props.titleHero.content }), _jsx("h2", { className: styles.home__subtitle, style: subtitleStyles, children: props.subtitleHero.content })] }), _jsxs("div", { className: styles.home__footer, children: [_jsx("h3", { style: subtitleTextHeroStyles, className: styles.home__titleDescription, children: props.subtitleTextHero.content }), _jsx("p", { style: TextHeroStyles, className: styles.home__description, children: props.TextHero.content }), _jsxs(Link, { style: ctaButtonHeroStyles, href: props.ctaButtonHero.content.link, className: `${styles.button} ${styles.button__flex}`, children: [_jsxs("span", { className: styles.button__flex, children: [_jsx("i", { className: `ri-shopping-bag-line ${styles.button__icon}` }), props.ctaButtonHero.content.textButton] }), _jsx("span", { style: priceButtonStyles, className: styles.home__price, children: props.priceButton.content })] })] })] })] }) }));
+});
 export default HeroBeats3;

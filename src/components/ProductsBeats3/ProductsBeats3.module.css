@@ -1,7 +1,4 @@
-/*=============== GOOGLE FONTS ===============*/
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
 
-/*=============== BASE ===============*/
 .section {
   font-size: .938rem;
   background-color: hsl(206, 4%, 6%);
@@ -95,6 +92,9 @@
 
 .products__content {
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .products__title, .products__price {
@@ -106,11 +106,11 @@
 }
 
 .products__button {
-  position: absolute;
-  right: .5rem;
-  bottom: .5rem;
-  padding: .5rem;
+  padding: 10px;
+  position: relative;
   border-radius: .35rem;
+  font-size: 13px;
+  margin-block-start: 10px;
 }
 
 /*=============== MEDIA QUERIES ===============*/
@@ -144,7 +144,7 @@
     padding-top: 5rem;
   }
   .products__card {
-    height: 152px;
+    height: 150px;
     padding: .85rem;
   }
   .products__img {

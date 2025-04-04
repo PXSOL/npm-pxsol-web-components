@@ -41,11 +41,10 @@
 }
 
 .home__img {
-  width: 250px;
+  width: 85px;
   position: absolute;
-  top: -16rem;
-  right: -41%;
-  opacity: 0.8;
+  top: -40px;
+  right: 10px;
 }
 
 .home__data {
@@ -82,6 +81,8 @@
 .home__description {
   margin-bottom: 2.5rem;
   line-height: 2rem;
+  transform: none;
+  opacity: 1;
 }
 
 .home__price {
@@ -123,19 +124,12 @@
   .section__title {
     font-size: 2.5rem;
   }
-  .home__img {
-    width: 200px;
-    top: -13rem;
-  }
   .home__title {
     top: -4rem;
     font-size: 3.5rem;
   }
   .home__data {
     padding-top: 1rem;
-  }
-  .home__description {
-    font-size: .813rem;
   }
 }
 
@@ -149,6 +143,7 @@
   .home__img {
     top: -7rem;
     left: 0;
+    width: 200px;
   }
 }
 
@@ -167,6 +162,7 @@
   .home__img {
     top: -9rem;
     left: 4rem;
+    width: 250px;
   }
   .home__data {
     padding-top: 8rem;
