@@ -128,8 +128,8 @@ export const componentsList = [
       },
       TextHero: {
           name: "Section text",
-          type: "subtitle",
-          dataType: "flatText",
+          type: "textParagraph",
+          dataType: "textParagraph",
           content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tempore nulla odio ipsa. Minus in consectetur harum esse deserunt iure maiores eligendi pariatur",
           styleData: {
             textColor:{
