@@ -1,0 +1,90 @@
+/* General  */
+
+.container { padding-inline: 15px; }
+.btn { color: #ffffff; text-transform: uppercase; font-size: 14px; border-radius: 100px; padding: 8px 18px; border: 2px solid transparent; transition: .25s ease-in-out; }
+.btnPrimary { color: #ffffff; background: #3b97c9; border-color: #3b97c9; padding: 10px 20px; border-radius: 10rem; font-weight: bold; }
+
+    .btnPrimary:is(:hover, :focus) { background: #186591; border-color: #186591; }
+.btnSecondary { color: #fff; border-radius: 10rem; border: 2px solid; padding: 10px 20px; }
+    .btnSecondary:is(:hover, :focus) { background: hsla(0, 0%, 100%, .1); }
+    .heroTitle { color: #ffffff; font-size: calc(20px + 3.5vw); }
+    .sectionSubtitle { color: #223544; }
+        .sectionSubtitle { font-size: calc(18px + 1.6vw); }
+        .h3 { font-size: calc(16px + 0.45vw); font-weight: 700; }
+.sectionSubtitle { color: #3b97c9; font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+.sectionTitle { margin-bottom: 15px; font-size: 40px; font-weight: bold; }
+.sectionText { color: #636774; margin-bottom: 30px; }
+.cardText { color: #636774; font-size: 14px; }
+
+/* Popular */
+
+.popular { padding-block: 60px; background-color: #eef6fd; }
+.popularList, .popularList > li:not(:last-child) { margin-bottom: 30px; }
+.popularCard { position: relative; overflow: hidden; border-radius: 25px; height: 430px; }
+    .popularCard .cardImg { height: 100%; }
+        .popularCard .cardImg img { width: 100%; height: 100%; object-fit: cover; }
+    .popularCard .cardContent { position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        color: #000000;
+        background: #ffffff82;
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 20px;
+        border: 1px solid #fff 
+    }
+    .popularCard .cardRating { 
+        background: #3b97c9; 
+        color: #ffffff; 
+        position: absolute; 
+        top: 0; 
+        right: 25px; 
+        display: flex; 
+        align-items: center; 
+        gap: 1px; 
+        transform: translateY(-50%);
+        padding: 6px 10px; 
+        border-radius: 20px; 
+        font-size: 14px; 
+        letter-spacing: 5px;
+    }
+    .popularCard .cardSubtitle { color: #2c81db; font-size: 13px; text-transform: uppercase; margin-bottom: 8px; }
+    .popularCard .cardTitle { margin-bottom: 5px; }
+        .popularCard :is(.cardSubtitle, .cardTitle) > a { color: inherit; }
+.popular .btn { margin-inline: auto; }
+
+@media (min-width: 580px) {
+    .container { max-width: 580px; margin-inline: auto; }
+    .btn { padding: 12px 30px; }
+
+    section:not(.cta) :is(.sectionSubtitle, .sectionTitle, .sectionText) { text-align: center; }
+        .sectionText { margin-bottom: 40px; }
+
+    .popularCard .cardContent { right: auto; } 
+}
+
+@media (min-width: 768px) {
+
+    .container { max-width: 800px; }
+    .sectionText { max-width: 600px; margin-inline: auto; }
+    .helplineBox { display: flex; justify-content: flex-start; align-items: center; gap: 10px; }
+        .helplineBox .wrapper { display: block; color: #ffffff; font-size: 13px; }
+    .socialList { gap: 10px; }
+
+    .popularList { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
+        .popularList > li:not(:last-child) { margin-bottom: 0; }
+    .popularCard .cardContent { right: 20px; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 1050px; }
+
+    .popularList { grid-template-columns: repeat(3, 1fr); }
+
+    .metaBox > ion-icon { font-size: 15px; }
+} 
+
+@media (min-width: 1200px) {
+    .container { max-width: 1180px; }
+}

@@ -1,0 +1,58 @@
+.container { padding-inline: 15px; }
+.btn { color: #ffffff; text-transform: uppercase; font-size: 14px; border-radius: 100px; padding: 8px 18px; border: 2px solid transparent; transition: .25s ease-in-out; }
+.btnPrimary { color: #ffffff; background: #3b97c9; border-color: #3b97c9; padding: 10px 20px; border-radius: 10rem; font-weight: bold; }
+
+    .btnPrimary:is(:hover, :focus) { background: #186591; border-color: #186591; }
+.btnSecondary { color: #fff; border-radius: 10rem; border: 2px solid; padding: 10px 20px; }
+    .btnSecondary:is(:hover, :focus) { background: hsla(0, 0%, 100%, .1); }
+    .heroTitle { color: #ffffff; font-size: calc(20px + 3.5vw); }
+    .sectionSubtitle { color: #223544; }
+        .sectionSubtitle { font-size: calc(18px + 1.6vw); }
+        .h3 { font-size: calc(16px + 0.45vw); font-weight: 700; }
+.sectionSubtitle { color: #3b97c9; font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+.sectionTitle { margin-bottom: 15px; font-size: 40px; font-weight: bold; }
+.sectionText { color: #636774; margin-bottom: 30px; }
+.cardText { color: #636774; font-size: 14px; }
+
+/* CTA */
+
+.cta { background: #3b97c9; padding-block: 60px; }
+    .cta :is(.sectionSubtitle, .sectionTitle, .sectionText) { color: #ffffff; }
+    .cta .btn { margin-inline: auto; }
+
+/* Footer */
+
+/* Media Queries */
+
+@media (min-width: 580px) {
+    section:not(.cta) :is(.sectionSubtitle, .sectionTitle, .sectionText) { text-align: center; }
+    .sectionText { margin-bottom: 40px; }
+
+    .popularCard .cardContent { right: auto; } 
+}
+
+@media (min-width: 768px) {
+
+    .container { max-width: 800px; }
+    .sectionText { max-width: 600px; margin-inline: auto; }
+    .helplineBox { display: flex; justify-content: flex-start; align-items: center; gap: 10px; }
+        .helplineBox .wrapper { display: block; color: #ffffff; font-size: 13px; }
+    .socialList { gap: 10px; }
+
+    .cta .container { display: flex; justify-content: space-between; align-items: center; }
+    .ctaContent { width: calc(100% - 225px); }
+    .cta .sectionText { margin-inline: 0; }
+    .cta .btn { margin-inline: 0; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 1050px; }
+
+    .metaBox > ion-icon { font-size: 15px; }
+
+    .cta .sectionTitle { max-width: 25ch; }
+} 
+
+@media (min-width: 1200px) {
+    .container { max-width: 1180px; }
+}

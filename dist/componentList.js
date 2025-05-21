@@ -1,151 +1,57 @@
-import HeaderBeats3 from "./components/HeaderBeats3/HeaderBeats3";
-import HeroBeats3 from "./components/HeroBeats3/HeroBeats3";
-import BrandsBeats3 from "./components/BrandsBeats3/BrandsBeats3";
-import SpecsBeats3 from "./components/SpecsBeats3/SpecsBeats3";
-import CaseBeats3 from "./components/CaseBeats3/CaseBeats3";
-import OfferBeats3 from "./components/OfferBeats3/OfferBeats3";
-import ProductsBeats3 from "./components/ProductsBeats3/ProductsBeats3";
-import FooterBeats3 from "./components/FooterBeats3/FooterBeats3";
+import HeroTravel1 from "./lp-components/HeroTravel1/HeroTravel1";
+import CtaTravel1 from "./lp-components/CtaTravel1/CtaTravel1";
+import EngineFormTravel1 from "./lp-components/EngineFormTravel1/EngineFormTravel1";
+import FooterTravel1 from "./lp-components/FooterTravel1/FooterTravel1";
+import GalleryTravel1 from "./lp-components/GalleryTravel1/GalleryTravel1";
+import HeaderTravel1 from "./lp-components/HeaderTravel1/HeaderTravel1";
+import PromosTravel1 from "./lp-components/PromosTravel1/PromosTravel1";
+import RoomsTravel1 from "./lp-components/RoomsTravel1/RoomsTravel1";
 export const componentsList = [
     // Beats 3 - coponents
     {
-        name: "Header - Beats 3",
-        component: HeaderBeats3,
+        name: "Hero - travel 1",
+        component: HeroTravel1,
         props: {
-            logoHeader: {
-                name: "Header Logo",
-                type: "imageSrc",
-                imageSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1200px-Beats_Electronics_logo.svg.png",
-            },
-            groupTextHero: {
-                name: "Group text",
-                type: "group",
-                content: [
-                    {
-                        ctaButtonHero: {
-                            name: "Cta button",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Home",
-                                link: "#home"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Cta button",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Specs",
-                                link: "#specs"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Cta button",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Case",
-                                link: "#case"
-                            }
-                        },
-                    },
-                ],
-            },
-        },
-    },
-    {
-        name: "Hero - Beats 3",
-        component: HeroBeats3,
-        props: {
-            backgroundHero: {
-                name: "Background section",
-                type: "section",
-                dataType: "section",
-                styleData: {
-                    backgroundColor: {
-                        name: "Background color",
-                        styleType: "color",
-                        color: "#000",
-                    },
-                }
-            },
             titleHero: {
                 name: "Title",
                 type: "title",
                 dataType: "flatText",
-                content: "Lorem",
+                content: "Hospedate en Hotel Demaz",
                 styleData: {
                     titleColor: {
                         name: "Title 1 color",
                         styleType: "color",
-                        color: "#fff",
+                        styleContent: "#fff",
                     },
                     titleSize: {
                         name: "Size title",
                         styleType: "fontSize",
-                        size: "70px",
+                        styleContent: "70px",
                     }
                 }
             },
-            subtitleHero: {
-                name: "Title 2",
-                type: "title",
-                dataType: "flatText",
-                content: "Ipsum",
-                styleData: {
-                    titleTwoColor: {
-                        name: "Title 2 color",
-                        styleType: "color",
-                        color: "#fff",
-                    },
-                    titleTwoSize: {
-                        name: "Size title",
-                        styleType: "fontSize",
-                        size: "50px",
-                    }
-                }
-            },
-            subtitleTextHero: {
-                name: "Subtitle",
-                type: "title",
-                dataType: "flatText",
-                content: "Lorem ipsum",
-                styleData: {
-                    subtitleColor: {
-                        name: "Subtitle color",
-                        styleType: "color",
-                        color: "#fff",
-                    },
-                    subtitleSize: {
-                        name: "Subtitle size",
-                        styleType: "fontSize",
-                        size: "25px",
-                    }
-                }
-            },
-            TextHero: {
-                name: "Section text",
+            textHero: {
+                name: "Text",
                 type: "textParagraph",
                 dataType: "textParagraph",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tempore nulla odio ipsa. Minus in consectetur harum esse deserunt iure maiores eligendi pariatur",
+                content: "En Hotel Demo, combinamos confort, estilo y atención personalizada para que vivas una estadía inolvidable. Disfrutá de nuestras habitaciones, desayuno casero y una ubicación privilegiada. Bienvenido al descanso que merecés",
                 styleData: {
-                    textColor: {
-                        name: "Section text color",
+                    titleColor: {
+                        name: "Text color",
                         styleType: "color",
-                        color: "#fff",
+                        styleContent: "#fff",
                     },
-                    textSize: {
-                        name: "Section text size",
+                    titleSize: {
+                        name: "Size title",
                         styleType: "fontSize",
-                        size: "14px",
+                        styleContent: "12px",
                     }
                 }
             },
             ctaButtonHero: {
                 name: "Cta button",
                 type: "ctaButton",
+                dataType: "ctaButton",
                 content: {
                     textButton: "Offer",
                     link: "https://your/link/here",
@@ -154,500 +60,55 @@ export const componentsList = [
                     textColor: {
                         name: "Cta color",
                         styleType: "color",
-                        color: "#fff",
+                        styleContent: "#fff",
                     },
                     backgroundColor: {
                         name: "Button background",
                         styleType: "color",
-                        color: "#fff",
+                        styleContent: "#fff",
                     },
                     buttonTextSize: {
                         name: "Button font size",
                         styleType: "fontSize",
-                        size: "14px",
-                    }
-                }
-            },
-            priceButton: {
-                name: "Offer Price",
-                type: "title",
-                dataType: "flatText",
-                content: "$99",
-                styleData: {
-                    priceColor: {
-                        name: "Price color",
-                        styleType: "color",
-                        color: "#fff",
-                    },
-                    buttonTextSize: {
-                        name: "Price font size",
-                        styleType: "fontSize",
-                        size: "14px",
-                    }
-                }
-            },
-            imageHero: {
-                name: "Main image",
-                type: "imageSrc",
-                imageSrc: "https://headpones-lp.vercel.app/assets/img/home.png",
-                styleData: {
-                    filterImage: {
-                        name: "Filter image",
-                        styleType: "filterImage",
-                        value: [
-                            { name: "brightness", value: "0.5" },
-                            { name: "contrast", value: "0.5" }
-                        ],
+                        styleContent: "14px",
                     }
                 }
             },
         }
     },
     {
-        name: "Brands - Beats 3",
-        component: BrandsBeats3,
-        props: {
-            groupTextHero: {
-                name: "Brands group",
-                type: "group",
-                content: [
-                    {
-                        brandName: {
-                            name: "Brand name",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Apple"
-                        },
-                        imgBrand: {
-                            name: "Brand logo",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/sponsor1.png",
-                        },
-                    },
-                    {
-                        brandName: {
-                            name: "Brand name",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Spotify"
-                        },
-                        imgBrand: {
-                            name: "Brand logo",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/sponsor2.png",
-                        },
-                    },
-                    {
-                        brandName: {
-                            name: "Brand name",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Amazon"
-                        },
-                        imgBrand: {
-                            name: "Brand logo",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/sponsor3.png",
-                        },
-                    },
-                    {
-                        brandName: {
-                            name: "Brand name",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "YouTube"
-                        },
-                        imgBrand: {
-                            name: "Brand logo",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/sponsor4.png",
-                        },
-                    },
-                ],
-            },
-        },
+        name: "Cta - travel 1",
+        component: CtaTravel1,
+        props: {}
     },
     {
-        name: "Specs - Beats 3",
-        component: SpecsBeats3,
-        props: {
-            titleHero: {
-                name: "Section title",
-                type: "title",
-                dataType: "flatText",
-                content: "Specs"
-            },
-            imgSection: {
-                name: "Main image",
-                type: "imageSrc",
-                imageSrc: "https://headpones-lp.vercel.app/assets/img/specs.png",
-            },
-            groupSpecs: {
-                name: "Specs group",
-                type: "group",
-                content: [
-                    {
-                        iconNameClass: {
-                            name: "Icon class",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "ri-bluetooth-line"
-                        },
-                        specTitle: {
-                            name: "Specs title",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Spec 1"
-                        },
-                        specDescription: {
-                            name: "Specs text",
-                            type: "subtitle",
-                            dataType: "flatText",
-                            content: "Lorem ipsum"
-                        },
-                    },
-                    {
-                        iconNameClass: {
-                            name: "Icon class",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "ri-bluetooth-line"
-                        },
-                        specTitle: {
-                            name: "Specs title",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Spec 1"
-                        },
-                        specDescription: {
-                            name: "Specs text",
-                            type: "subtitle",
-                            dataType: "flatText",
-                            content: "Lorem ipsum"
-                        },
-                    },
-                    {
-                        iconNameClass: {
-                            name: "Icon class",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "ri-bluetooth-line"
-                        },
-                        specTitle: {
-                            name: "Specs title",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Spec 1"
-                        },
-                        specDescription: {
-                            name: "Specs text",
-                            type: "subtitle",
-                            dataType: "flatText",
-                            content: "Lorem ipsum"
-                        },
-                    },
-                    {
-                        iconNameClass: {
-                            name: "Icon class",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "ri-bluetooth-line"
-                        },
-                        specTitle: {
-                            name: "Specs title",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "Spec 1"
-                        },
-                        specDescription: {
-                            name: "Specs text",
-                            type: "subtitle",
-                            dataType: "flatText",
-                            content: "Lorem ipsum"
-                        },
-                    },
-                ],
-            },
-        },
+        name: "Engine Form - travel 1",
+        component: EngineFormTravel1,
+        props: {}
     },
     {
-        name: "Case - Beats 3",
-        component: CaseBeats3,
-        props: {
-            titleHero: {
-                name: "Section title",
-                type: "title",
-                dataType: "flatText",
-                content: "Case"
-            },
-            imgSection: {
-                name: "Main image",
-                type: "imageSrc",
-                imageSrc: "https://headpones-lp.vercel.app/assets/img/case.png",
-            },
-            TextSection: {
-                name: "Text",
-                type: "subtitle",
-                dataType: "flatText",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tempore nulla odio ipsa. Minus in consectetur harum esse deserunt iure maiores eligendi pariatur"
-            },
-            ctaButtonHero: {
-                name: "Cta button",
-                type: "ctaButton",
-                content: {
-                    textButton: "View more",
-                    link: "https://your/link/here/"
-                }
-            },
-        },
+        name: "Footer - travel 1",
+        component: FooterTravel1,
+        props: {}
     },
     {
-        name: "Offer - Beats 3",
-        component: OfferBeats3,
-        props: {
-            titleOffer: {
-                name: "Card title",
-                type: "title",
-                dataType: "flatText",
-                content: "Lorem ipsum dolor sit amet"
-            },
-            TextSection: {
-                name: "Text",
-                type: "subtitle",
-                dataType: "flatText",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            },
-            imgSection: {
-                name: "Card image",
-                type: "imageSrc",
-                imageSrc: "https://headpones-lp.vercel.app/assets/img/discount.png",
-            },
-            ctaButtonCard: {
-                name: "Cta button",
-                type: "ctaButton",
-                content: {
-                    textButton: "Buy Now",
-                    link: "https://your/link/here/"
-                }
-            },
-        },
+        name: "Gallery - travel 1",
+        component: GalleryTravel1,
+        props: {}
     },
     {
-        name: "Products - Beats 3",
-        component: ProductsBeats3,
-        props: {
-            titleHero: {
-                name: "Section Title",
-                type: "title",
-                dataType: "flatText",
-                content: "Choose your style"
-            },
-            groupProductsSection: {
-                name: "Products group",
-                type: "group",
-                content: [
-                    {
-                        ctaButtonHero: {
-                            name: "Name And Product Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Offer",
-                                link: "https://tu/enlace/aqui/"
-                            }
-                        },
-                        imgProduct: {
-                            name: "Product image",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/product1.png",
-                        },
-                        productPrice: {
-                            name: "Product Price",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "$199"
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Name And Product Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Offer",
-                                link: "https://tu/enlace/aqui/"
-                            }
-                        },
-                        imgProduct: {
-                            name: "Product image",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/product1.png",
-                        },
-                        productPrice: {
-                            name: "Product Price",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "$199"
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Name And Product Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Offer",
-                                link: "https://tu/enlace/aqui/"
-                            }
-                        },
-                        imgProduct: {
-                            name: "Product image",
-                            type: "imageSrc",
-                            imageSrc: "https://headpones-lp.vercel.app/assets/img/product1.png",
-                        },
-                        productPrice: {
-                            name: "Product Price",
-                            type: "title",
-                            dataType: "flatText",
-                            content: "$199"
-                        },
-                    },
-                ],
-            },
-        },
+        name: "Promos - travel 1",
+        component: PromosTravel1,
+        props: {}
     },
     {
-        name: "Footer - Beats 3",
-        component: FooterBeats3,
-        props: {
-            imgLogoFooter: {
-                name: "Footer Logo",
-                type: "imageSrc",
-                imageSrc: "https://headpones-lp.vercel.app/assets/img/logo.png",
-            },
-            titleColumn1: {
-                name: "Column name 1",
-                type: "title",
-                dataType: "flatText",
-                content: "Products"
-            },
-            groupColumn1: {
-                name: "Products group",
-                type: "group",
-                content: [
-                    {
-                        ctaButtonHero: {
-                            name: "Product",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Headphones",
-                                link: "https://your/link/here"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Product",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Headphones",
-                                link: "https://your/link/here"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Product",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Headphones",
-                                link: "https://your/link/here"
-                            }
-                        },
-                    },
-                ],
-            },
-            titleColumn2: {
-                name: "Column name 2",
-                type: "title",
-                dataType: "flatText",
-                content: "About Us"
-            },
-            groupColumn2: {
-                name: "About items group",
-                type: "group",
-                content: [
-                    {
-                        ctaButtonHero: {
-                            name: "Item column 2",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Name item",
-                                link: "https://your/link/here/"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Item column 2",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Name item",
-                                link: "https://your/link/here/"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "Item column 2",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "Name item",
-                                link: "https://your/link/here/"
-                            }
-                        },
-                    },
-                ],
-            },
-            groupSocialIcons: {
-                name: "Social Media group",
-                type: "group",
-                content: [
-                    {
-                        ctaButtonHero: {
-                            name: "IconSocial network icon And Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "ri-facebook-fill",
-                                link: "https://facebook.com"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "IconSocial network icon And Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "ri-facebook-fill",
-                                link: "https://facebook.com"
-                            }
-                        },
-                    },
-                    {
-                        ctaButtonHero: {
-                            name: "IconSocial network icon And Link",
-                            type: "ctaButton",
-                            content: {
-                                textButton: "ri-facebook-fill",
-                                link: "https://facebook.com"
-                            }
-                        },
-                    },
-                ],
-            },
-            copyright: {
-                name: "Copyright text",
-                type: "title",
-                dataType: "flatText",
-                content: "© My Company. All right reserved"
-            },
-        }
+        name: "Header - travel 1",
+        component: HeaderTravel1,
+        props: {}
+    },
+    {
+        name: "Rooms - travel 1",
+        component: RoomsTravel1,
+        props: {}
     },
 ];

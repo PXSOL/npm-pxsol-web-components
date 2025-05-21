@@ -1,0 +1,88 @@
+/* General  */
+
+.container { padding-inline: 15px; }
+.btn { color: #ffffff; text-transform: uppercase; font-size: 14px; border-radius: 100px; padding: 8px 18px; border: 2px solid transparent; transition: .25s ease-in-out; }
+.btnPrimary { color: #ffffff; background: #3b97c9; border-color: #3b97c9; padding: 10px 20px; border-radius: 10rem; font-weight: bold; }
+
+    .btnPrimary:is(:hover, :focus) { background: #186591; border-color: #186591; }
+.btnSecondary { color: #fff; border-radius: 10rem; border: 2px solid; padding: 10px 20px; }
+    .btnSecondary:is(:hover, :focus) { background: hsla(0, 0%, 100%, .1); }
+    .heroTitle { color: #ffffff; font-size: calc(20px + 3.5vw); }
+    .sectionSubtitle { color: #223544; }
+        .sectionSubtitle { font-size: calc(18px + 1.6vw); }
+        .h3 { font-size: calc(16px + 0.45vw); font-weight: 700; }
+.sectionSubtitle { color: #3b97c9; font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+.sectionTitle { margin-bottom: 15px; font-size: 40px; font-weight: bold; }
+.sectionText { color: #636774; margin-bottom: 30px; }
+.cardText { color: #636774; font-size: 14px; }
+
+/* Package */
+
+.package { padding-block: 60px; background-color: #eef6fd; }
+.packageList { margin-bottom: 40px; }
+    .packageList > li:not(:last-child) { margin-bottom: 30px; }
+.packageCard { background: #fafafa; overflow: hidden; border-radius: 15px; }
+    .packageCard .cardBanner { height: 250px; }
+        .packageCard .cardBanner img { width: 100%; height: 100%; object-fit: cover; }
+    .packageCard .cardContent { padding: 30px 20px; }
+    .packageCard .cardTitle { line-height: 1.6; margin-bottom: 20px; }
+    .packageCard .cardPrice { background: #589ad0; color: #ffffff; padding: 25px 20px; text-align: center; }
+        .packageCard .cardPrice .wrapper { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px 15px; margin-bottom: 10px; }
+    .packageCard .cardRating { display: flex; justify-content: center; align-items: center; gap: 1px; font-size: 14px; }
+        .packageCard .cardRating ion-icon:last-child { color: hsl(0, 0%, 80%); }
+    .packageCard .price { font-size: calc(18px + 1.6vw); font-weight: 800; margin-bottom: 20px; }
+        .packageCard .price span { font-size: 12px; font-weight: initial; }
+.cardMetaList { 
+    background: #ffffff; 
+    max-width: max-content; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 8px;
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, .15);
+    border-radius: 50px;
+    margin-top: 10px; 
+}
+.cardMetaTime { position: relative; }
+    .cardMetaItem:not(:last-child)::after { content: ''; position: absolute; top: 4px; right: -1px; bottom: 4px; width: 1px; background: hsla(0, 0%, 0%, .3); }
+.metaBox { display: flex; justify-content: center; align-items: center; gap: 5px; padding-inline: 9px; color: #636774; font-size: 12px; }
+    .package .btn { margin-inline: auto; }
+
+/* Media Queries */
+
+@media (min-width: 580px) {
+    .container { max-width: 580px; margin-inline: auto; }
+    .btn { padding: 12px 30px; }
+
+    section:not(.cta) :is(.sectionSubtitle, .sectionTitle, .sectionText) { text-align: center; }
+        .sectionText { margin-bottom: 40px; }
+}
+
+@media (min-width: 768px) {
+
+    .container { max-width: 800px; }
+    .sectionText { max-width: 600px; margin-inline: auto; }
+    .helplineBox { display: flex; justify-content: flex-start; align-items: center; gap: 10px; }
+        .helplineBox .wrapper { display: block; color: #ffffff; font-size: 13px; }
+    .socialList { gap: 10px; }
+
+    .packageList { margin-bottom: 50px; }
+        .packageList > li:not(:last-child) { margin-bottom: 40px; }
+    .packageCard { display: grid; grid-template-columns: 1.3fr 1.5fr 1fr; }
+        .packageCard .cardBanner { height: 100%; }
+        .packageCard .cardContent { padding: 40px; }
+        .packageCard .cardPrice { display: grid; place-content: center; }
+            .packageCard .cardPrice .wrapper { margin-bottom: 15px; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 1050px; }
+
+
+    .metaBox > ion-icon { font-size: 15px; }
+} 
+
+@media (min-width: 1200px) {
+    .container { max-width: 1180px; }
+}
