@@ -1,11 +1,11 @@
-import HeroTravel1 from "./lp-components/HeroTravel1/HeroTravel1";
-import CtaTravel1 from "./lp-components/CtaTravel1/CtaTravel1";
-import EngineFormTravel1 from "./lp-components/EngineFormTravel1/EngineFormTravel1";
-import FooterTravel1 from "./lp-components/FooterTravel1/FooterTravel1";
-import GalleryTravel1 from "./lp-components/GalleryTravel1/GalleryTravel1";
-import HeaderTravel1 from "./lp-components/HeaderTravel1/HeaderTravel1";
-import PromosTravel1 from "./lp-components/PromosTravel1/PromosTravel1";
-import RoomsTravel1 from "./lp-components/RoomsTravel1/RoomsTravel1";
+import HeroTravel1 from "./components/HeroTravel1/HeroTravel1";
+import CtaTravel1 from "./components/CtaTravel1/CtaTravel1";
+import EngineFormTravel1 from "./components/EngineFormTravel1/EngineFormTravel1";
+import FooterTravel1 from "./components/FooterTravel1/FooterTravel1";
+import GalleryTravel1 from "./components/GalleryTravel1/GalleryTravel1";
+import HeaderTravel1 from "./components/HeaderTravel1/HeaderTravel1";
+import PromosTravel1 from "./components/PromosTravel1/PromosTravel1";
+import RoomsTravel1 from "./components/RoomsTravel1/RoomsTravel1";
 
 export const componentsList = [
   // Beats 3 - coponents
