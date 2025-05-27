@@ -1,6 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import styles from "./HeaderTravel1.module.css";
-import "../reset.css";
 import Link from "next/link";
 import Image from "next/image";
 export const HeaderTravel1 = (props) => {

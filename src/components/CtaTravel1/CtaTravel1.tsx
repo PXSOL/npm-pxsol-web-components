@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./CtaTravel1.module.css";
-import "../reset.css";
 
 export const CtaTravel1 = () => {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./RoomsTravel1.module.css";
-import "../reset.css";
 import Image from "next/image";
 
 export const HeroTravel1 = () => {

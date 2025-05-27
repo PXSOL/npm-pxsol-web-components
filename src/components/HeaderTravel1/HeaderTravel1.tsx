@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./HeaderTravel1.module.css";
-import "../reset.css";
 import Link from "next/link";
 import Image from "next/image";
 

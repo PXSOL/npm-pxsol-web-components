@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./SpecsBeats3.module.css";
-// import "remixicon/fonts/remixicon.css";
 import Image from "next/image";
 
 export const SpecsBeats3: React.FC<any> = React.memo((props) => {

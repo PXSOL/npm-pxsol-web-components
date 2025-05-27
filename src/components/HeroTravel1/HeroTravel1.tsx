@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./HeroTravel1.module.css";
-import "../reset.css";
 
 export const HeroTravel1 = (props: any) => {
   console.log("Props de Hero travel 1", props);

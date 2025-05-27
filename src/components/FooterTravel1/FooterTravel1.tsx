@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./FooterTravel1.module.css";
-import "../reset.css";
 
 export const HeroTravel1 = () => {
   return (

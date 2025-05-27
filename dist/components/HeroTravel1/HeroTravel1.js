@@ -1,6 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import styles from "./HeroTravel1.module.css";
-import "../reset.css";
 export const HeroTravel1 = (props) => {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
     console.log("Props de Hero travel 1", props);

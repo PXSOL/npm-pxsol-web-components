@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./EngineFormTravel1.module.css";
-import "../reset.css";
 
 export const EngineFormTravel1 = () => {
   return (
