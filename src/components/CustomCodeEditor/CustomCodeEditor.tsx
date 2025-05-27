@@ -6,7 +6,7 @@ interface CustomCodeEditorProps {
 }
 
 export const CustomCodeEditor: React.FC<CustomCodeEditorProps> = (props) => {
-  const propsValues = Object.values(props);
+  const propsValues = Object.keys(props).map(key => props[key]);
 
   const htmlProp = propsValues.find((prop: any) => prop?.dataType === "html");
   const cssProp = propsValues.find((prop: any) => prop?.dataType === "css");
