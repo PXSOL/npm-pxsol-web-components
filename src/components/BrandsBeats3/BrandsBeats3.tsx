@@ -18,7 +18,9 @@ export const BrandsBeats3: React.FC<any> = React.memo((props) => {
 
   return (
     <section className={`${styles.sponsor} ${styles.section}`}>
-      <div className={`${styles.sponsor__container} ${styles.container} ${styles.grid}`}>
+      <div
+        className={`${styles.sponsor__container} ${styles.container} ${styles.grid}`}
+      >
         {brandImages}
       </div>
     </section>

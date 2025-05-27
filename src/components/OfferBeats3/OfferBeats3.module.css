@@ -1,4 +1,3 @@
-
 .section {
   font-size: 0.938rem;
   background-color: hsl(206, 4%, 6%);
@@ -27,7 +26,7 @@
 .button {
   display: inline-block;
   background-color: hsl(206, 4%, 4%);
-  color: #FFF;
+  color: #fff;
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   transition: 0.3s;
@@ -82,7 +81,7 @@
 .discountImg {
   position: relative;
   width: 300px;
-  margin-inline: auto; 
+  margin-inline: auto;
   margin-top: 3rem;
 }
 

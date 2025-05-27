@@ -12,9 +12,13 @@ export const SpecsBeats3: React.FC<any> = React.memo((props) => {
   const specsData = useMemo(() => {
     return props.groupSpecs.content.map((itemSpec: any, index: any) => (
       <div key={index} className={styles.specs__data}>
-        <i className={`${itemSpec.iconNameClass.content} ${styles.specs__icon}`}></i>
+        <i
+          className={`${itemSpec.iconNameClass.content} ${styles.specs__icon}`}
+        ></i>
         <h3 className={styles.specs__title}>{itemSpec.specTitle.content}</h3>
-        <span className={styles.specs__subtitle}>{itemSpec.specDescription.content}</span>
+        <span className={styles.specs__subtitle}>
+          {itemSpec.specDescription.content}
+        </span>
       </div>
     ));
   }, [props.groupSpecs.content]);

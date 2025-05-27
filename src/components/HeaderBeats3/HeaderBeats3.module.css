@@ -67,7 +67,7 @@
 
 .nav__toggle {
   font-size: 1.2rem;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -79,7 +79,7 @@
     left: 0;
     width: 100%;
     padding: 4rem 0 3rem;
-    transition: all .4s;
+    transition: all 0.4s;
     opacity: 0;
     pointer-events: none;
   }
@@ -101,7 +101,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff4f;
-  transition: .4s;
+  transition: 0.4s;
   padding: 10px;
 }
 
@@ -114,7 +114,7 @@
   font-size: 1.5rem;
   top: 1rem;
   right: 1rem;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .activeLink {
-  background: #FFF;
+  background: #fff;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -136,43 +136,44 @@
 /*=============== MEDIA QUERIES ===============*/
 @media screen and (max-width: 340px) {
   .container {
-      margin-left: 1rem;
-      margin-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .section__title {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (min-width: 767px) {
   .section {
-      padding: 70px 0px;
+    padding: 70px 0px;
   }
   .nav {
-      height: 60px;
+    height: 60px;
   }
   .spacingTopHeader {
-      height: 60px;
+    height: 60px;
   }
   .nav__logo {
-      width: 22px;
+    width: 22px;
   }
   .nav__list {
-      flex-direction: row;
-      column-gap: 3.5rem;
+    flex-direction: row;
+    column-gap: 3.5rem;
   }
   .nav__link {
-      font-size: 0.938rem;
-      text-transform: initial;
+    font-size: 0.938rem;
+    text-transform: initial;
   }
-  .nav__toggle, .nav__close {
-      display: none;
+  .nav__toggle,
+  .nav__close {
+    display: none;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
-      margin-left: auto;
-      margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

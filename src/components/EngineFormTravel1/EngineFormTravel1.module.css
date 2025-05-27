@@ -1,65 +1,191 @@
 /* General  */
 
-.container { padding-inline: 15px; }
-.btn { color: #ffffff; text-transform: uppercase; font-size: 14px; border-radius: 100px; padding: 8px 18px; border: 2px solid transparent; transition: .25s ease-in-out; }
-.btnPrimary { color: #ffffff; background: #3b97c9; border-color: #3b97c9; padding: 10px 20px; border-radius: 10rem; font-weight: bold; }
+.container {
+  padding-inline: 15px;
+}
+.btn {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 100px;
+  padding: 8px 18px;
+  border: 2px solid transparent;
+  transition: 0.25s ease-in-out;
+}
+.btnPrimary {
+  color: #ffffff;
+  background: #3b97c9;
+  border-color: #3b97c9;
+  padding: 10px 20px;
+  border-radius: 10rem;
+  font-weight: bold;
+}
 
-    .btnPrimary:is(:hover, :focus) { background: #186591; border-color: #186591; }
-.btnSecondary { color: #fff; border-radius: 10rem; border: 2px solid; padding: 10px 20px; }
-    .btnSecondary:is(:hover, :focus) { background: hsla(0, 0%, 100%, .1); }
-    .heroTitle { color: #ffffff; font-size: calc(20px + 3.5vw); }
-    .sectionSubtitle { color: #223544; }
-        .sectionSubtitle { font-size: calc(18px + 1.6vw); }
-        .h3 { font-size: calc(16px + 0.45vw); font-weight: 700; }
-.sectionSubtitle { color: #3b97c9; font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
-.sectionTitle { margin-bottom: 15px; font-size: 40px; font-weight: bold; }
-.sectionText { color: #636774; margin-bottom: 30px; }
-.cardText { color: #636774; font-size: 14px; }
+.btnPrimary:is(:hover, :focus) {
+  background: #186591;
+  border-color: #186591;
+}
+.btnSecondary {
+  color: #fff;
+  border-radius: 10rem;
+  border: 2px solid;
+  padding: 10px 20px;
+}
+.btnSecondary:is(:hover, :focus) {
+  background: hsla(0, 0%, 100%, 0.1);
+}
+.heroTitle {
+  color: #ffffff;
+  font-size: calc(20px + 3.5vw);
+}
+.sectionSubtitle {
+  color: #223544;
+}
+.sectionSubtitle {
+  font-size: calc(18px + 1.6vw);
+}
+.h3 {
+  font-size: calc(16px + 0.45vw);
+  font-weight: 700;
+}
+.sectionSubtitle {
+  color: #3b97c9;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sectionTitle {
+  margin-bottom: 15px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.sectionText {
+  color: #636774;
+  margin-bottom: 30px;
+}
+.cardText {
+  color: #636774;
+  font-size: 14px;
+}
 
 /* Tour Search */
 
-.tourSearch { background: #3b97c9; padding-block: 60px; }
-.tourSearchForm .inputLabel { color: #ffffff; font-size: 14px; margin-left: 20px; margin-bottom: 10px; }
-.tourSearchForm .inputField { background: #ffffff; padding: 10px 15px; font-size: 14px; border-radius: 50px; }
-    .tourSearchForm .inputField::placeholder { color: #999999; }
-    .tourSearchForm .inputField.inputField::-webkit-datetime-edit { color: #999999; text-transform: uppercase; }
-.tourSearchForm .inputWrapper { display: flex; flex-direction: column; align-items: start; margin-bottom: 15px; }
-.tourSearch .btn { width: 100%; font-weight: 600; margin-top: 35px; }
+.tourSearch {
+  background: #3b97c9;
+  padding-block: 60px;
+}
+.tourSearchForm .inputLabel {
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.tourSearchForm .inputField {
+  background: #ffffff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 50px;
+}
+.tourSearchForm .inputField::placeholder {
+  color: #999999;
+}
+.tourSearchForm .inputField.inputField::-webkit-datetime-edit {
+  color: #999999;
+  text-transform: uppercase;
+}
+.tourSearchForm .inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 15px;
+}
+.tourSearch .btn {
+  width: 100%;
+  font-weight: 600;
+  margin-top: 35px;
+}
 
 /* Media Queries */
 
 @media (min-width: 580px) {
-    .container { max-width: 580px; margin-inline: auto; }
-    .btn { padding: 12px 30px; }
+  .container {
+    max-width: 580px;
+    margin-inline: auto;
+  }
+  .btn {
+    padding: 12px 30px;
+  }
 
-    section:not(.cta) :is(.sectionSubtitle, .sectionTitle, .sectionText) { text-align: center; }
-        .sectionText { margin-bottom: 40px; }
+  section:not(.cta) :is(.sectionSubtitle, .sectionTitle, .sectionText) {
+    text-align: center;
+  }
+  .sectionText {
+    margin-bottom: 40px;
+  }
 
-    .btnGroup { gap: 20px; }
+  .btnGroup {
+    gap: 20px;
+  }
 
-    .tourSearchForm { display: grid; grid-template-columns: 1fr 1fr; align-items: flex-end; gap: 15px; }
-        .tourSearchForm .inputWrapper { margin-bottom: 0; }
-        .tourSearchForm .inputField { padding: 16px 20px; }
-    .tourSearch .btn { grid-column: span 2; margin-top: 20px; }
+  .tourSearchForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+    gap: 15px;
+  }
+  .tourSearchForm .inputWrapper {
+    margin-bottom: 0;
+  }
+  .tourSearchForm .inputField {
+    padding: 16px 20px;
+  }
+  .tourSearch .btn {
+    grid-column: span 2;
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 768px) {
-
-    .container { max-width: 800px; }
-    .sectionText { max-width: 600px; margin-inline: auto; }
-    .helplineBox { display: flex; justify-content: flex-start; align-items: center; gap: 10px; }
-        .helplineBox .wrapper { display: block; color: #ffffff; font-size: 13px; }
-    .socialList { gap: 10px; }
-
+  .container {
+    max-width: 800px;
+  }
+  .sectionText {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  .helplineBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  .helplineBox .wrapper {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+  }
+  .socialList {
+    gap: 10px;
+  }
 }
 
 @media (min-width: 992px) {
-    .container { max-width: 1050px; }
+  .container {
+    max-width: 1050px;
+  }
 
-    .tourSearchForm { grid-template-columns: repeat(5, 1fr); }
-    .tourSearch .btn { padding: 15px; grid-column: unset; margin-top: 0; }
-} 
+  .tourSearchForm {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .tourSearch .btn {
+    padding: 15px;
+    grid-column: unset;
+    margin-top: 0;
+  }
+}
 
 @media (min-width: 1200px) {
-    .container { max-width: 1180px; }
+  .container {
+    max-width: 1180px;
+  }
 }

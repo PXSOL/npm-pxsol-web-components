@@ -11,7 +11,10 @@ export const FooterBeats3: React.FC<any> = React.memo((props) => {
   const column1Links = React.useMemo(() => {
     return props.groupColumn1.content.map((itemColumn: any, index: any) => (
       <li key={index}>
-        <Link href={itemColumn.ctaButtonHero.content.link} className={styles.footer__link}>
+        <Link
+          href={itemColumn.ctaButtonHero.content.link}
+          className={styles.footer__link}
+        >
           {itemColumn.ctaButtonHero.content.textButton}
         </Link>
       </li>
@@ -21,7 +24,10 @@ export const FooterBeats3: React.FC<any> = React.memo((props) => {
   const column2Links = React.useMemo(() => {
     return props.groupColumn2.content.map((itemColumn: any, index: any) => (
       <li key={index}>
-        <Link href={itemColumn.ctaButtonHero.content.link} className={styles.footer__link}>
+        <Link
+          href={itemColumn.ctaButtonHero.content.link}
+          className={styles.footer__link}
+        >
           {itemColumn.ctaButtonHero.content.textButton}
         </Link>
       </li>
@@ -37,7 +43,10 @@ export const FooterBeats3: React.FC<any> = React.memo((props) => {
         className={styles.footer__socialLink}
         aria-label={`Go to ${itemSocial.ctaButtonHero.content.textButton}`}
       >
-        <i className={itemSocial.ctaButtonHero.content.textButton} aria-hidden="true"></i>
+        <i
+          className={itemSocial.ctaButtonHero.content.textButton}
+          aria-hidden="true"
+        ></i>
       </Link>
     ));
   }, [props.groupSocialIcons.content]);
@@ -68,9 +77,14 @@ export const FooterBeats3: React.FC<any> = React.memo((props) => {
 
         <div className={styles.footer__content}>
           <form action="" className={styles.footer__form}>
-            <input type="email" placeholder="Email" className={styles.footer__input} />
+            <input
+              type="email"
+              placeholder="Email"
+              className={styles.footer__input}
+            />
             <button className={buttonClass}>
-              <i className={`ri-send-plane-line ${styles.button__icon}`}></i> Subscribe
+              <i className={`ri-send-plane-line ${styles.button__icon}`}></i>{" "}
+              Subscribe
             </button>
           </form>
 
@@ -79,7 +93,9 @@ export const FooterBeats3: React.FC<any> = React.memo((props) => {
       </div>
 
       <p className={styles.footer__copy}>
-        <span className={styles.footer__copyLink}>{props.copyright.content}</span>
+        <span className={styles.footer__copyLink}>
+          {props.copyright.content}
+        </span>
       </p>
     </footer>
   );

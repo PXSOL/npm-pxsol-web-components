@@ -10,7 +10,9 @@ export const CaseBeats3: React.FC<any> = React.memo((props) => {
 
   return (
     <section className={sectionClass} id="case">
-      <h2 className={`${styles.section__title} ${styles.section__titleGradient}`}>
+      <h2
+        className={`${styles.section__title} ${styles.section__titleGradient}`}
+      >
         {props.titleHero.content}
       </h2>
 
@@ -28,7 +30,9 @@ export const CaseBeats3: React.FC<any> = React.memo((props) => {
         </div>
 
         <div className={styles.case__data}>
-          <p className={styles.case__description}>{props.TextSection.content}</p>
+          <p className={styles.case__description}>
+            {props.TextSection.content}
+          </p>
           <Link href={props.ctaButtonHero.content.link} className={buttonClass}>
             <i className={`ri-information-line ${styles.button__icon}`}></i>
             {props.ctaButtonHero.content.textButton}

@@ -6,7 +6,10 @@ import Link from "next/link";
 export const HeaderBeats3: React.FC<any> = React.memo((props) => {
   const [isActiveMenu, setIsActiveMenu] = React.useState(false);
 
-  const toggleMenu = React.useCallback(() => setIsActiveMenu((prev) => !prev), []);
+  const toggleMenu = React.useCallback(
+    () => setIsActiveMenu((prev) => !prev),
+    [],
+  );
   const closeMenu = React.useCallback(() => setIsActiveMenu(false), []);
 
   const navItems = React.useMemo(() => {
@@ -42,12 +45,20 @@ export const HeaderBeats3: React.FC<any> = React.memo((props) => {
           <div className={navMenuClass} id="nav-menu">
             <ul className={styles.nav__list}>{navItems}</ul>
 
-            <div onClick={closeMenu} className={styles.nav__close} id="nav-close">
+            <div
+              onClick={closeMenu}
+              className={styles.nav__close}
+              id="nav-close"
+            >
               <i className="ri-close-line"></i>
             </div>
           </div>
 
-          <div onClick={toggleMenu} className={styles.nav__toggle} id="nav-toggle">
+          <div
+            onClick={toggleMenu}
+            className={styles.nav__toggle}
+            id="nav-toggle"
+          >
             <i className="ri-function-line"></i>
           </div>
         </nav>

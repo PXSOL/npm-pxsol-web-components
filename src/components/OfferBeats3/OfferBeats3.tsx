@@ -8,11 +8,26 @@ export const OfferBeats3: React.FC<any> = React.memo((props) => {
   const containerClass = `${styles.discountContainer} ${styles.container} ${styles.grid}`;
   const buttonClass = `${styles.button} ${styles.buttonFlex}`;
 
-  const title = useMemo(() => props.titleOffer.content, [props.titleOffer.content]);
-  const description = useMemo(() => props.TextSection.content, [props.TextSection.content]);
-  const buttonText = useMemo(() => props.ctaButtonCard.content.textButton, [props.ctaButtonCard.content.textButton]);
-  const buttonLink = useMemo(() => props.ctaButtonCard.content.link, [props.ctaButtonCard.content.link]);
-  const imageSrc = useMemo(() => props.imgSection.imageSrc, [props.imgSection.imageSrc]);
+  const title = useMemo(
+    () => props.titleOffer.content,
+    [props.titleOffer.content],
+  );
+  const description = useMemo(
+    () => props.TextSection.content,
+    [props.TextSection.content],
+  );
+  const buttonText = useMemo(
+    () => props.ctaButtonCard.content.textButton,
+    [props.ctaButtonCard.content.textButton],
+  );
+  const buttonLink = useMemo(
+    () => props.ctaButtonCard.content.link,
+    [props.ctaButtonCard.content.link],
+  );
+  const imageSrc = useMemo(
+    () => props.imgSection.imageSrc,
+    [props.imgSection.imageSrc],
+  );
 
   return (
     <section className={sectionClass}>
