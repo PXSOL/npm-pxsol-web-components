@@ -29,29 +29,36 @@ export const CustomJS: React.FC<CustomJSProps> = (props) => {
   };
 
   useEffect(() => {
-    const targetDocument = getTargetDocument();
+    try {
+      const targetDocument = getTargetDocument();
 
-    if (jsContent.trim() && jsContent !== "// Add your JavaScript here") {
-      try {
-        // Create a safer execution context with access to the container and iframe document
-        const safeEval = new Function(
-          "container",
-          "document",
-          "window",
-          `
+      if (jsContent.trim() && jsContent !== "// Add your JavaScript here") {
+        try {
+          // Create a safer execution context with access to the container and iframe document
+          const safeEval = new Function(
+            "container",
+            "document",
+            "window",
+            `
                     try {
                         ${jsContent}
                     } catch (error) {
                         console.error("Custom JS Error:", error);
+                        // Don't re-throw to prevent breaking the parent component
                     }
                 `,
-        );
+          );
 
-        // Execute the JavaScript with the container element, iframe document, and iframe window
-        safeEval(containerRef.current, targetDocument, window);
-      } catch (error) {
-        console.error("Error executing custom JavaScript:", error);
+          // Execute the JavaScript with the container element, iframe document, and iframe window
+          safeEval(containerRef.current, targetDocument, window);
+        } catch (error) {
+          console.error("Error executing custom JavaScript:", error);
+          // Don't re-throw to prevent breaking the parent component
+        }
       }
+    } catch (error) {
+      console.error("Critical error in CustomJS component:", error);
+      // Don't re-throw to prevent breaking the parent component
     }
   }, [jsContent]);
 

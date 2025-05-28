@@ -20,22 +20,29 @@ export const CustomCodeEditor = (props) => {
     const getTargetDocument = () => {
         // Since this component is rendered inside an iframe via react-frame-component,
         // we need to find which iframe contains our component
-        const iframes = document.querySelectorAll("iframe");
-        for (const iframe of Array.from(iframes)) {
-            try {
-                if (iframe.contentDocument && iframe.contentWindow) {
-                    // Check if this iframe contains our component
-                    const componentInIframe = iframe.contentDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`);
-                    if (componentInIframe) {
-                        console.log("Found component in iframe, using iframe document");
-                        return iframe.contentDocument;
+        try {
+            const iframes = document.querySelectorAll("iframe");
+            for (const iframe of Array.from(iframes)) {
+                try {
+                    // Check if iframe is accessible (same-origin)
+                    if (iframe.contentDocument && iframe.contentWindow) {
+                        // Check if this iframe contains our component
+                        const componentInIframe = iframe.contentDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`);
+                        if (componentInIframe) {
+                            console.log("Found component in iframe, using iframe document");
+                            return iframe.contentDocument;
+                        }
                     }
                 }
+                catch (e) {
+                    // Cross-origin or access issues, skip this iframe
+                    console.warn("Cannot access iframe document:", e);
+                    continue;
+                }
             }
-            catch (e) {
-                // Cross-origin or access issues, skip this iframe
-                continue;
-            }
+        }
+        catch (e) {
+            console.warn("Error accessing iframes:", e);
         }
         console.log("Component not found in any iframe, using main document");
         return document;
@@ -89,82 +96,114 @@ export const CustomCodeEditor = (props) => {
     useEffect(() => {
         // Use setTimeout to allow the component to render in the iframe first
         const timeoutId = setTimeout(() => {
-            const targetDocument = getTargetDocument();
-            console.log(`=== CSS INJECTION DEBUG for ${uniqueId.current} ===`);
-            console.log("Target document:", targetDocument);
-            console.log("CSS content:", cssContent);
-            console.log("HTML content:", htmlContent);
-            console.log("Container ref:", containerRef.current);
-            // Handle CSS injection with scoping
-            const styleId = `custom-code-editor-styles-${uniqueId.current}`;
-            // Remove existing style element for this component
-            if (styleElementRef.current) {
+            try {
+                const targetDocument = getTargetDocument();
+                console.log(`=== CSS INJECTION DEBUG for ${uniqueId.current} ===`);
+                console.log("Target document:", targetDocument);
+                console.log("CSS content:", cssContent);
+                console.log("HTML content:", htmlContent);
+                console.log("Container ref:", containerRef.current);
+                // Handle CSS injection with scoping
+                const styleId = `custom-code-editor-styles-${uniqueId.current}`;
+                // Remove existing style element for this component
+                if (styleElementRef.current) {
+                    try {
+                        styleElementRef.current.remove();
+                        console.log(`Removed existing style element for component ${uniqueId.current}`);
+                    }
+                    catch (e) {
+                        console.log("Error removing existing style:", e);
+                    }
+                    styleElementRef.current = null;
+                }
+                // Remove any existing style elements with the same ID
                 try {
-                    styleElementRef.current.remove();
-                    console.log(`Removed existing style element for component ${uniqueId.current}`);
+                    const existingStyle = targetDocument.querySelector(`#${styleId}`);
+                    if (existingStyle) {
+                        existingStyle.remove();
+                        console.log(`Removed existing style element with ID ${styleId}`);
+                    }
                 }
                 catch (e) {
-                    console.log("Error removing existing style:", e);
+                    console.warn("Error removing existing style element:", e);
                 }
-                styleElementRef.current = null;
-            }
-            // Remove any existing style elements with the same ID
-            const existingStyle = targetDocument.querySelector(`#${styleId}`);
-            if (existingStyle) {
-                existingStyle.remove();
-                console.log(`Removed existing style element with ID ${styleId}`);
-            }
-            if (cssContent.trim()) {
-                // Create scoped CSS
-                const scopedCSS = scopeCSS(cssContent);
-                // Create new style element in the iframe document
-                const styleElement = targetDocument.createElement("style");
-                styleElement.id = styleId;
-                styleElement.textContent = scopedCSS;
-                // Inject into iframe's head
-                targetDocument.head.appendChild(styleElement);
-                styleElementRef.current = styleElement;
-                console.log(`CSS injected for component ${uniqueId.current}:`);
-                console.log("Original CSS:", cssContent);
-                console.log("Scoped CSS:", scopedCSS);
-                console.log("Style element:", styleElement);
-                console.log("Style element in DOM:", targetDocument.querySelector(`#${styleId}`));
-                console.log("All style elements in head:", targetDocument.head.querySelectorAll("style"));
-                console.log("Component element in DOM:", targetDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`));
-            }
-            else {
-                console.log(`No CSS content to inject for component ${uniqueId.current}`);
-            }
-            // Handle JavaScript execution with scoped context
-            if (jsContent.trim()) {
-                try {
-                    // Find the component in the target document
-                    const componentElement = targetDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`);
-                    if (componentElement) {
-                        // Create a scoped execution context
-                        const executeJS = new Function("container", "document", "window", "componentId", `
+                if (cssContent.trim()) {
+                    try {
+                        // Create scoped CSS
+                        const scopedCSS = scopeCSS(cssContent);
+                        // Create new style element in the iframe document
+                        const styleElement = targetDocument.createElement("style");
+                        styleElement.id = styleId;
+                        styleElement.textContent = scopedCSS;
+                        // Inject into iframe's head
+                        targetDocument.head.appendChild(styleElement);
+                        styleElementRef.current = styleElement;
+                        console.log(`CSS injected for component ${uniqueId.current}:`);
+                        console.log("Original CSS:", cssContent);
+                        console.log("Scoped CSS:", scopedCSS);
+                        console.log("Style element:", styleElement);
+                        console.log("Style element in DOM:", targetDocument.querySelector(`#${styleId}`));
+                        console.log("All style elements in head:", targetDocument.head.querySelectorAll("style"));
+                        console.log("Component element in DOM:", targetDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`));
+                    }
+                    catch (e) {
+                        console.error("Error injecting CSS:", e);
+                    }
+                }
+                else {
+                    console.log(`No CSS content to inject for component ${uniqueId.current}`);
+                }
+                // Handle JavaScript execution with scoped context
+                if (jsContent.trim()) {
+                    try {
+                        // Find the component in the target document
+                        const componentElement = targetDocument.querySelector(`[data-custom-code-id="${uniqueId.current}"]`);
+                        if (componentElement) {
+                            // Create a scoped execution context with better error handling
+                            const executeJS = new Function("container", "document", "window", "componentId", `
               try {
                 // Provide a scoped querySelector that only works within this component
-                const $ = (selector) => container.querySelector(selector);
-                const $$ = (selector) => container.querySelectorAll(selector);
+                const $ = (selector) => {
+                  try {
+                    return container.querySelector(selector);
+                  } catch (e) {
+                    console.warn("Error in scoped querySelector:", e);
+                    return null;
+                  }
+                };
+                const $$ = (selector) => {
+                  try {
+                    return container.querySelectorAll(selector);
+                  } catch (e) {
+                    console.warn("Error in scoped querySelectorAll:", e);
+                    return [];
+                  }
+                };
                 
                 // Execute the user's JavaScript with scoped context
                 ${jsContent}
               } catch (error) {
-                console.error("Custom JS Error in component ${uniqueId.current}:", error);
+                console.error("Custom JS Error in component " + componentId + ":", error);
+                // Don't re-throw the error to prevent breaking the parent component
               }
             `);
-                        // Execute with the scoped container
-                        executeJS(componentElement, targetDocument, targetDocument.defaultView || window, uniqueId.current);
-                        console.log(`JavaScript executed for component ${uniqueId.current}`);
+                            // Execute with the scoped container
+                            executeJS(componentElement, targetDocument, targetDocument.defaultView || window, uniqueId.current);
+                            console.log(`JavaScript executed for component ${uniqueId.current}`);
+                        }
+                        else {
+                            console.log(`Component element not found for JavaScript execution: ${uniqueId.current}`);
+                        }
                     }
-                    else {
-                        console.log(`Component element not found for JavaScript execution: ${uniqueId.current}`);
+                    catch (error) {
+                        console.error(`Error executing custom JavaScript in component ${uniqueId.current}:`, error);
+                        // Don't re-throw to prevent breaking the parent component
                     }
                 }
-                catch (error) {
-                    console.error(`Error executing custom JavaScript in component ${uniqueId.current}:`, error);
-                }
+            }
+            catch (error) {
+                console.error(`Critical error in CustomCodeEditor component ${uniqueId.current}:`, error);
+                // Don't re-throw to prevent breaking the parent component
             }
         }, 100); // 100ms delay to allow iframe rendering
         // Cleanup function
@@ -176,6 +215,7 @@ export const CustomCodeEditor = (props) => {
                 }
                 catch (e) {
                     // Element might already be removed
+                    console.warn("Error during cleanup:", e);
                 }
                 styleElementRef.current = null;
             }

@@ -19,25 +19,45 @@ export const CustomCSS = (props) => {
         return document;
     };
     useEffect(() => {
-        const targetDocument = getTargetDocument();
-        // Create style element with unique ID
-        const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
-        // Remove existing style element
-        if (styleElementRef.current) {
-            styleElementRef.current.remove();
+        try {
+            const targetDocument = getTargetDocument();
+            // Create style element with unique ID
+            const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
+            // Remove existing style element
+            if (styleElementRef.current) {
+                try {
+                    styleElementRef.current.remove();
+                }
+                catch (e) {
+                    console.warn("Error removing existing CSS style element:", e);
+                }
+            }
+            // Create new style element if there's CSS content
+            if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
+                try {
+                    const styleElement = targetDocument.createElement("style");
+                    styleElement.id = styleId;
+                    styleElement.textContent = cssContent;
+                    targetDocument.head.appendChild(styleElement);
+                    styleElementRef.current = styleElement;
+                }
+                catch (e) {
+                    console.error("Error creating CSS style element:", e);
+                }
+            }
         }
-        // Create new style element if there's CSS content
-        if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
-            const styleElement = targetDocument.createElement("style");
-            styleElement.id = styleId;
-            styleElement.textContent = cssContent;
-            targetDocument.head.appendChild(styleElement);
-            styleElementRef.current = styleElement;
+        catch (error) {
+            console.error("Critical error in CustomCSS component:", error);
         }
         // Cleanup function
         return () => {
             if (styleElementRef.current) {
-                styleElementRef.current.remove();
+                try {
+                    styleElementRef.current.remove();
+                }
+                catch (e) {
+                    console.warn("Error during CSS cleanup:", e);
+                }
                 styleElementRef.current = null;
             }
         };

@@ -3,4 +3,5 @@
 // export { default as About } from "./components/About";
 // export { default as Cta } from "./components/Cta";
 // export { default as WidgetChat } from "./components/WidgetChat";
-export * from "./componentList";
+export { componentsList } from "./componentList";
+export { componentsList as default } from "./componentList";
