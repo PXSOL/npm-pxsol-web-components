@@ -5,7 +5,7 @@ export const CustomCSS = (props) => {
     var _a, _b, _c;
     // Extract content from the props structure that comes from the system
     // The props come with numeric indices like "0", "1", "2"
-    const propsValues = Object.values(props);
+    const propsValues = Object.keys(props).map(key => props[key]);
     const cssProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "css");
     const cssContent = ((_a = cssProp === null || cssProp === void 0 ? void 0 : cssProp.content) === null || _a === void 0 ? void 0 : _a.cssContent) || "/* Add your CSS here */";
     const indicatorColor = ((_c = (_b = cssProp === null || cssProp === void 0 ? void 0 : cssProp.styleData) === null || _b === void 0 ? void 0 : _b.indicatorColor) === null || _c === void 0 ? void 0 : _c.styleContent) || "#666";

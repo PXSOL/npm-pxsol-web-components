@@ -1,0 +1,394 @@
+/* Hero Slider Container */
+.heroSlider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Hero Content Section */
+.heroContent {
+  text-align: center;
+  margin-bottom: 3rem;
+  z-index: 10;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroText {
+  font-size: 1.2rem;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+/* Gallery Slider Section */
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imageSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.sliderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Navigation Arrows */
+.sliderArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.sliderArrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.sliderArrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.sliderArrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.prevArrow {
+  left: 30px;
+}
+
+.nextArrow {
+  right: 30px;
+}
+
+/* Content Overlay */
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  padding: 0 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Dots Navigation */
+.sliderDots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.dot:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background: white;
+  border-color: white;
+  transform: scale(1.3);
+}
+
+.activeDot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+
+  .heroText {
+    font-size: 1.1rem;
+  }
+
+  .sliderArrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sliderArrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .prevArrow {
+    left: 20px;
+  }
+
+  .nextArrow {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSlider {
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  .contentContainer {
+    padding: 0 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroText {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  .sliderArrow {
+    width: 45px;
+    height: 45px;
+    opacity: 0.9;
+  }
+
+  .sliderArrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .prevArrow {
+    left: 15px;
+  }
+
+  .nextArrow {
+    right: 15px;
+  }
+
+  .sliderDots {
+    bottom: 20px;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroText {
+    font-size: 0.9rem;
+  }
+
+  .contentContainer {
+    padding: 0 1rem;
+  }
+
+  .sliderArrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sliderArrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .prevArrow {
+    left: 10px;
+  }
+
+  .nextArrow {
+    right: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .sliderArrow {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .sliderArrow:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}

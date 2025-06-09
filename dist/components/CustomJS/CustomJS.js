@@ -5,7 +5,7 @@ export const CustomJS = (props) => {
     var _a, _b, _c;
     // Extract content from the props structure that comes from the system
     // The props come with numeric indices like "0", "1", "2"
-    const propsValues = Object.values(props);
+    const propsValues = Object.keys(props).map(key => props[key]);
     const jsProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "javascript");
     const jsContent = ((_a = jsProp === null || jsProp === void 0 ? void 0 : jsProp.content) === null || _a === void 0 ? void 0 : _a.jsContent) || "// Add your JavaScript here";
     const indicatorColor = ((_c = (_b = jsProp === null || jsProp === void 0 ? void 0 : jsProp.styleData) === null || _b === void 0 ? void 0 : _b.indicatorColor) === null || _c === void 0 ? void 0 : _c.styleContent) || "#666";

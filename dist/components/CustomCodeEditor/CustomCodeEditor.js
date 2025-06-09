@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./CustomCodeEditor.module.css";
 export const CustomCodeEditor = (props) => {
     var _a, _b, _c, _d, _e;
-    const propsValues = Object.values(props);
+    const propsValues = Object.keys(props).map(key => props[key]);
     const htmlProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "html");
     const cssProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "css");
     const jsProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "javascript");

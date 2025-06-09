@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./GalleryTravel1.module.css";
-import "../reset.css";
 import Image from "next/image";
 
 interface GalleryProps {

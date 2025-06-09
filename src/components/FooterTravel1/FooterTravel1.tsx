@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./FooterTravel1.module.css";
-import "../reset.css";
 
 interface FooterProps {
   Section?: {

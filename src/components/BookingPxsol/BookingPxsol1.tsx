@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./BookingPxsol1.module.css";
-import "../reset.css";
 
 interface ContentProps {
   name: string;

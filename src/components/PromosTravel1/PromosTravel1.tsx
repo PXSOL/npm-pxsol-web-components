@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./PromosTravel1.module.css";
-import "../reset.css";
 import Image from "next/image";
 
 export const PromosTravel1 = () => {

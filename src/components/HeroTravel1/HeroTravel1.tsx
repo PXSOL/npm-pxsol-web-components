@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
 import styles from "./HeroTravel1.module.css";
-import "../reset.css";
 
 interface HeroProps {
   Title?: {

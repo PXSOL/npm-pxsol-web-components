@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./CtaTravel1.module.css";
-import "../reset.css";
 
 interface CtaProps {
   Section?: {

@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./RoomsTravel1.module.css";
-import "../reset.css";
 import Image from "next/image";
 
 interface RoomsProps {

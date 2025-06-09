@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from "./HeroSlider1.module.css";
-import "../reset.css";
 
 // Interface completamente nueva y simple
 interface HeroSliderProps {
