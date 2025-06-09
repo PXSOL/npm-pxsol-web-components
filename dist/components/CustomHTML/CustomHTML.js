@@ -4,7 +4,7 @@ export const CustomHTML = (props) => {
     var _a, _b, _c;
     // Extract content from the props structure that comes from the system
     // The props come with numeric indices like "0", "1", "2"
-    const propsValues = Object.keys(props).map(key => props[key]);
+    const propsValues = Object.values(props);
     const htmlProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "html");
     const htmlContent = ((_a = htmlProp === null || htmlProp === void 0 ? void 0 : htmlProp.content) === null || _a === void 0 ? void 0 : _a.htmlContent) || "";
     const containerWidth = ((_c = (_b = htmlProp === null || htmlProp === void 0 ? void 0 : htmlProp.styleData) === null || _b === void 0 ? void 0 : _b.containerWidth) === null || _c === void 0 ? void 0 : _c.styleContent) || "100%";

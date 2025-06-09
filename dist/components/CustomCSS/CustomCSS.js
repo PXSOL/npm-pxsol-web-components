@@ -5,7 +5,7 @@ export const CustomCSS = (props) => {
     var _a, _b, _c;
     // Extract content from the props structure that comes from the system
     // The props come with numeric indices like "0", "1", "2"
-    const propsValues = Object.keys(props).map(key => props[key]);
+    const propsValues = Object.values(props);
     const cssProp = propsValues.find((prop) => (prop === null || prop === void 0 ? void 0 : prop.dataType) === "css");
     const cssContent = ((_a = cssProp === null || cssProp === void 0 ? void 0 : cssProp.content) === null || _a === void 0 ? void 0 : _a.cssContent) || "/* Add your CSS here */";
     const indicatorColor = ((_c = (_b = cssProp === null || cssProp === void 0 ? void 0 : cssProp.styleData) === null || _b === void 0 ? void 0 : _b.indicatorColor) === null || _c === void 0 ? void 0 : _c.styleContent) || "#666";
@@ -19,45 +19,25 @@ export const CustomCSS = (props) => {
         return document;
     };
     useEffect(() => {
-        try {
-            const targetDocument = getTargetDocument();
-            // Create style element with unique ID
-            const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
-            // Remove existing style element
-            if (styleElementRef.current) {
-                try {
-                    styleElementRef.current.remove();
-                }
-                catch (e) {
-                    console.warn("Error removing existing CSS style element:", e);
-                }
-            }
-            // Create new style element if there's CSS content
-            if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
-                try {
-                    const styleElement = targetDocument.createElement("style");
-                    styleElement.id = styleId;
-                    styleElement.textContent = cssContent;
-                    targetDocument.head.appendChild(styleElement);
-                    styleElementRef.current = styleElement;
-                }
-                catch (e) {
-                    console.error("Error creating CSS style element:", e);
-                }
-            }
+        const targetDocument = getTargetDocument();
+        // Create style element with unique ID
+        const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
+        // Remove existing style element
+        if (styleElementRef.current) {
+            styleElementRef.current.remove();
         }
-        catch (error) {
-            console.error("Critical error in CustomCSS component:", error);
+        // Create new style element if there's CSS content
+        if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
+            const styleElement = targetDocument.createElement("style");
+            styleElement.id = styleId;
+            styleElement.textContent = cssContent;
+            targetDocument.head.appendChild(styleElement);
+            styleElementRef.current = styleElement;
         }
         // Cleanup function
         return () => {
             if (styleElementRef.current) {
-                try {
-                    styleElementRef.current.remove();
-                }
-                catch (e) {
-                    console.warn("Error during CSS cleanup:", e);
-                }
+                styleElementRef.current.remove();
                 styleElementRef.current = null;
             }
         };

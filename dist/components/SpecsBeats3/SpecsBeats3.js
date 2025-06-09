@@ -1,6 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useMemo } from "react";
 import styles from "./SpecsBeats3.module.css";
+// import "remixicon/fonts/remixicon.css";
 import Image from "next/image";
 export const SpecsBeats3 = React.memo((props) => {
     const sectionClass = `${styles.specs} ${styles.section} ${styles.grid}`;

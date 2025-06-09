@@ -8,7 +8,7 @@ interface CustomJSProps {
 export const CustomJS: React.FC<CustomJSProps> = (props) => {
   // Extract content from the props structure that comes from the system
   // The props come with numeric indices like "0", "1", "2"
-  const propsValues = Object.values(props);
+  const propsValues = Object.keys(props).map(key => props[key]);
   const jsProp = propsValues.find(
     (prop: any) => prop?.dataType === "javascript",
   );
