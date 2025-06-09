@@ -1,6 +1,6 @@
 {
   "name": "lp-components-pxsol",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Componentes reutilizables para React y Next.js",
   "main": "dist/index.js",
   "module": "dist/index.js",
