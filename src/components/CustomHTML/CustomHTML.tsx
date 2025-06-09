@@ -8,7 +8,7 @@ interface CustomHTMLProps {
 export const CustomHTML: React.FC<CustomHTMLProps> = (props) => {
   // Extract content from the props structure that comes from the system
   // The props come with numeric indices like "0", "1", "2"
-  const propsValues = Object.keys(props).map(key => props[key]);
+  const propsValues = Object.values(props);
   const htmlProp = propsValues.find((prop: any) => prop?.dataType === "html");
 
   const htmlContent = htmlProp?.content?.htmlContent || "";

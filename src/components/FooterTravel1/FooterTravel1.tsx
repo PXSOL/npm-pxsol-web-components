@@ -1,9 +1,47 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./FooterTravel1.module.css";
+import "../reset.css";
 
-export const HeroTravel1 = () => {
+interface FooterProps {
+  Section?: {
+    content: string;
+    styleData: {
+      backgroundColor: { styleContent: string };
+      margin: { styleContent: string };
+      padding: { styleContent: string };
+      borderRadius: { styleContent: string };
+    };
+    type: string;
+    dataType: string;
+    name: string;
+    _id?: string;
+  };
+}
+
+export const FooterTravel1: React.FC<FooterProps> = (props) => {
+  const sectionStyles = props.Section;
+
+  const sectionContainerStyles = useMemo(() => {
+    return {
+      backgroundColor:
+        sectionStyles?.styleData?.backgroundColor?.styleContent || "#fff",
+      margin:
+        sectionStyles?.styleData?.margin?.styleContent || "0px 0px 0px 0px",
+      padding:
+        sectionStyles?.styleData?.padding?.styleContent || "0px 0px 0px 0px",
+      borderRadius:
+        sectionStyles?.styleData?.borderRadius?.styleContent ||
+        "0px 0px 0px 0px",
+    };
+  }, [
+    sectionStyles?.styleData?.backgroundColor?.styleContent,
+    sectionStyles?.styleData?.margin?.styleContent,
+    sectionStyles?.styleData?.padding?.styleContent,
+    sectionStyles?.styleData?.borderRadius?.styleContent,
+  ]);
+
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={sectionContainerStyles}>
       <div className={styles.footerTop}>
         <div className={styles.container}>
           <div className={styles.footerBrand}>
@@ -96,4 +134,4 @@ export const HeroTravel1 = () => {
   );
 };
 
-export default HeroTravel1;
+export default FooterTravel1;

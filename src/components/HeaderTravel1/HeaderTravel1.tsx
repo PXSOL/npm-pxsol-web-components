@@ -1,13 +1,65 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./HeaderTravel1.module.css";
+import "../reset.css";
 import Link from "next/link";
 import Image from "next/image";
 
-export const HeaderTravel1 = (props: any) => {
+interface HeaderProps {
+  buttonGroup?: {
+    content: Array<{
+      content?: {
+        textButton: string;
+        link: string;
+      };
+    }>;
+  };
+  Section?: {
+    content: string;
+    styleData: {
+      backgroundColor: { styleContent: string };
+      margin: { styleContent: string };
+      padding: { styleContent: string };
+      borderRadius: { styleContent: string };
+    };
+    type: string;
+    dataType: string;
+    name: string;
+    _id?: string;
+  };
+}
+
+export const HeaderTravel1: React.FC<HeaderProps> = (props) => {
+  // Validación defensiva para buttonGroup
+  const buttonGroup = props.buttonGroup?.content || [];
+  const sectionStyles = props.Section;
+
+  const sectionContainerStyles = useMemo(() => {
+    return {
+      backgroundColor:
+        sectionStyles?.styleData?.backgroundColor?.styleContent || "#fff",
+      margin:
+        sectionStyles?.styleData?.margin?.styleContent || "0px 0px 0px 0px",
+      padding:
+        sectionStyles?.styleData?.padding?.styleContent || "0px 0px 0px 0px",
+      borderRadius:
+        sectionStyles?.styleData?.borderRadius?.styleContent ||
+        "0px 0px 0px 0px",
+    };
+  }, [
+    sectionStyles?.styleData?.backgroundColor?.styleContent,
+    sectionStyles?.styleData?.margin?.styleContent,
+    sectionStyles?.styleData?.padding?.styleContent,
+    sectionStyles?.styleData?.borderRadius?.styleContent,
+  ]);
+
   return (
     <>
       <div className={styles.topBarHeaderWhiteSpace}></div>
-      <header className={styles.header} data-header>
+      <header
+        className={styles.header}
+        data-header
+        style={sectionContainerStyles}
+      >
         <div className={styles.overlay} data-overlay></div>
 
         <div className={styles.headerTop}>
@@ -71,14 +123,14 @@ export const HeaderTravel1 = (props: any) => {
               </div>
 
               <ul className={styles.navbarList}>
-                {props.buttonGroup.content.map((item: any, index: number) => (
+                {buttonGroup.map((item: any, index: number) => (
                   <li key={index}>
                     <Link
-                      href={item.content.link}
+                      href={item.content?.link || "#"}
                       className={styles.navbarLink}
                       data-nav-link
                     >
-                      {item.content.textButton}
+                      {item.content?.textButton || "Link"}
                     </Link>
                   </li>
                 ))}

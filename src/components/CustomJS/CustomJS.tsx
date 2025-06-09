@@ -8,7 +8,7 @@ interface CustomJSProps {
 export const CustomJS: React.FC<CustomJSProps> = (props) => {
   // Extract content from the props structure that comes from the system
   // The props come with numeric indices like "0", "1", "2"
-  const propsValues = Object.keys(props).map(key => props[key]);
+  const propsValues = Object.values(props);
   const jsProp = propsValues.find(
     (prop: any) => prop?.dataType === "javascript",
   );
@@ -29,36 +29,29 @@ export const CustomJS: React.FC<CustomJSProps> = (props) => {
   };
 
   useEffect(() => {
-    try {
-      const targetDocument = getTargetDocument();
+    const targetDocument = getTargetDocument();
 
-      if (jsContent.trim() && jsContent !== "// Add your JavaScript here") {
-        try {
-          // Create a safer execution context with access to the container and iframe document
-          const safeEval = new Function(
-            "container",
-            "document",
-            "window",
-            `
+    if (jsContent.trim() && jsContent !== "// Add your JavaScript here") {
+      try {
+        // Create a safer execution context with access to the container and iframe document
+        const safeEval = new Function(
+          "container",
+          "document",
+          "window",
+          `
                     try {
                         ${jsContent}
                     } catch (error) {
                         console.error("Custom JS Error:", error);
-                        // Don't re-throw to prevent breaking the parent component
                     }
                 `,
-          );
+        );
 
-          // Execute the JavaScript with the container element, iframe document, and iframe window
-          safeEval(containerRef.current, targetDocument, window);
-        } catch (error) {
-          console.error("Error executing custom JavaScript:", error);
-          // Don't re-throw to prevent breaking the parent component
-        }
+        // Execute the JavaScript with the container element, iframe document, and iframe window
+        safeEval(containerRef.current, targetDocument, window);
+      } catch (error) {
+        console.error("Error executing custom JavaScript:", error);
       }
-    } catch (error) {
-      console.error("Critical error in CustomJS component:", error);
-      // Don't re-throw to prevent breaking the parent component
     }
   }, [jsContent]);
 

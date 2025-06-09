@@ -1,10 +1,52 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./GalleryTravel1.module.css";
+import "../reset.css";
 import Image from "next/image";
 
-export const GalleryTravel1 = () => {
+interface GalleryProps {
+  Section?: {
+    content: string;
+    styleData: {
+      backgroundColor: { styleContent: string };
+      margin: { styleContent: string };
+      padding: { styleContent: string };
+      borderRadius: { styleContent: string };
+    };
+    type: string;
+    dataType: string;
+    name: string;
+    _id?: string;
+  };
+}
+
+export const GalleryTravel1: React.FC<GalleryProps> = (props) => {
+  const sectionStyles = props.Section;
+
+  const sectionContainerStyles = useMemo(() => {
+    return {
+      backgroundColor:
+        sectionStyles?.styleData?.backgroundColor?.styleContent || "#fff",
+      margin:
+        sectionStyles?.styleData?.margin?.styleContent || "0px 0px 0px 0px",
+      padding:
+        sectionStyles?.styleData?.padding?.styleContent || "0px 0px 0px 0px",
+      borderRadius:
+        sectionStyles?.styleData?.borderRadius?.styleContent ||
+        "0px 0px 0px 0px",
+    };
+  }, [
+    sectionStyles?.styleData?.backgroundColor?.styleContent,
+    sectionStyles?.styleData?.margin?.styleContent,
+    sectionStyles?.styleData?.padding?.styleContent,
+    sectionStyles?.styleData?.borderRadius?.styleContent,
+  ]);
+
   return (
-    <section className={styles.gallery} id="gallery">
+    <section
+      className={styles.gallery}
+      id="gallery"
+      style={sectionContainerStyles}
+    >
       <div className={styles.container}>
         <p className={styles.sectionSubtitle}>Photo Gallery</p>
         <h2 className={styles.sectionTitle}>Photos from travellers</h2>

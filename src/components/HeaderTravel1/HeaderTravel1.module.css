@@ -14,8 +14,8 @@
 }
 .btnPrimary {
   color: #ffffff;
-  background: #3b97c9;
-  border-color: #3b97c9;
+  background: #5692f1;
+  border-color: #5692f1;
   padding: 10px 20px;
   border-radius: 10rem;
   font-weight: bold;
@@ -49,7 +49,7 @@
   font-weight: 700;
 }
 .sectionSubtitle {
-  color: #3b97c9;
+  color: #5692f1;
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -186,7 +186,7 @@
 }
 .navCloseBtn {
   font-size: 20px;
-  color: #3b97c9;
+  color: #5692f1;
 }
 .navbarList {
   border-top: 1px solid hsla(0, 0%, 0%, 0.1);
@@ -203,7 +203,7 @@
   text-transform: capitalize;
 }
 .navbarLink:is(:hover, :focus) {
-  color: #3b97c9;
+  color: #5692f1;
 }
 .overlay {
   position: fixed;
@@ -338,7 +338,7 @@
     color: #404040;
   }
   .header.active .navbarLink:is(:hover, :focus) {
-    color: #3b97c9;
+    color: #5692f1;
   }
   .header.active .socialLink {
     color: #404040;

@@ -14,8 +14,8 @@
 }
 .btnPrimary {
   color: #ffffff;
-  background: #3b97c9;
-  border-color: #3b97c9;
+  background: #5692f1;
+  border-color: #5692f1;
   padding: 10px 20px;
   border-radius: 10rem;
   font-weight: bold;
@@ -49,7 +49,7 @@
   font-weight: 700;
 }
 .sectionSubtitle {
-  color: #3b97c9;
+  color: #5692f1;
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -104,7 +104,7 @@
   left: 0;
   width: 50px;
   height: 2px;
-  background: #3b97c9;
+  background: #5692f1;
 }
 .contactText {
   font-size: 14px;
@@ -190,7 +190,7 @@
   right: 15px;
   width: 35px;
   height: 35px;
-  background: #3b97c9;
+  background: #5692f1;
   color: #ffffff;
   display: grid;
   place-items: center;

@@ -1,0 +1,337 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 7rem 1rem;
+  background: linear-gradient(135deg, #71a1db 0%, #3b82f6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  position: relative;
+}
+
+.averageContainer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  display: flex;
+  gap: 2rem;
+  max-width: 1052px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scoreCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.scoreNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.scoreLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.averageDetails {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.averageItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.ratingBar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ratingFill {
+  height: 100%;
+  background: #4ade80;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.reviewsContainer {
+  position: relative;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  max-width: 1118px;
+  margin-inline: auto;
+}
+
+.reviewCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition:
+    transform 0.3s ease,
+    opacity 0.5s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+}
+
+.reviewHeader {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviewerInfo h3 {
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.reviewerInfo p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.tripType {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  color: white;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.reviewScore {
+  background: #4ade80;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: bold;
+}
+
+.reviewContent {
+  padding: 1.5rem;
+}
+
+.reviewHighlight {
+  margin-bottom: 1rem;
+}
+
+.reviewHighlight h4 {
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.reviewHighlight p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.reviewDate {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviewDate p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.navButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* Loading skeleton styles */
+.reviewCard .reviewContent:empty {
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.1) 8%,
+    rgba(255, 255, 255, 0.2) 18%,
+    rgba(255, 255, 255, 0.1) 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  height: 200px;
+}
+
+.reviewTitle:empty {
+  height: 1.5rem;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.1) 8%,
+    rgba(255, 255, 255, 0.2) 18%,
+    rgba(255, 255, 255, 0.1) 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.reviewDescription:empty {
+  height: 4rem;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.1) 8%,
+    rgba(255, 255, 255, 0.2) 18%,
+    rgba(255, 255, 255, 0.1) 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 0.25rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.errorIcon {
+  color: #f56565;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.errorMessage {
+  color: white;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .reviewsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviewsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .averageContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .scoreCircle {
+    margin: 0 auto;
+  }
+
+  .averageDetails {
+    grid-template-columns: 1fr;
+  }
+}

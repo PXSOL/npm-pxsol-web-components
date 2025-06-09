@@ -8,7 +8,7 @@ interface CustomCSSProps {
 export const CustomCSS: React.FC<CustomCSSProps> = (props) => {
   // Extract content from the props structure that comes from the system
   // The props come with numeric indices like "0", "1", "2"
-  const propsValues = Object.keys(props).map(key => props[key]);
+  const propsValues = Object.values(props);
   const cssProp = propsValues.find((prop: any) => prop?.dataType === "css");
 
   const cssContent = cssProp?.content?.cssContent || "/* Add your CSS here */";
@@ -27,45 +27,29 @@ export const CustomCSS: React.FC<CustomCSSProps> = (props) => {
   };
 
   useEffect(() => {
-    try {
-      const targetDocument = getTargetDocument();
+    const targetDocument = getTargetDocument();
 
-      // Create style element with unique ID
-      const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
+    // Create style element with unique ID
+    const styleId = "custom-css-" + Math.random().toString(36).substr(2, 9);
 
-      // Remove existing style element
-      if (styleElementRef.current) {
-        try {
-          styleElementRef.current.remove();
-        } catch (e) {
-          console.warn("Error removing existing CSS style element:", e);
-        }
-      }
+    // Remove existing style element
+    if (styleElementRef.current) {
+      styleElementRef.current.remove();
+    }
 
-      // Create new style element if there's CSS content
-      if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
-        try {
-          const styleElement = targetDocument.createElement("style");
-          styleElement.id = styleId;
-          styleElement.textContent = cssContent;
-          targetDocument.head.appendChild(styleElement);
-          styleElementRef.current = styleElement;
-        } catch (e) {
-          console.error("Error creating CSS style element:", e);
-        }
-      }
-    } catch (error) {
-      console.error("Critical error in CustomCSS component:", error);
+    // Create new style element if there's CSS content
+    if (cssContent.trim() && cssContent !== "/* Add your CSS here */") {
+      const styleElement = targetDocument.createElement("style");
+      styleElement.id = styleId;
+      styleElement.textContent = cssContent;
+      targetDocument.head.appendChild(styleElement);
+      styleElementRef.current = styleElement;
     }
 
     // Cleanup function
     return () => {
       if (styleElementRef.current) {
-        try {
-          styleElementRef.current.remove();
-        } catch (e) {
-          console.warn("Error during CSS cleanup:", e);
-        }
+        styleElementRef.current.remove();
         styleElementRef.current = null;
       }
     };

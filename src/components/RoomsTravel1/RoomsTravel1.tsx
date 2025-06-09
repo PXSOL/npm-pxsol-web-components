@@ -1,10 +1,52 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./RoomsTravel1.module.css";
+import "../reset.css";
 import Image from "next/image";
 
-export const HeroTravel1 = () => {
+interface RoomsProps {
+  Section?: {
+    content: string;
+    styleData: {
+      backgroundColor: { styleContent: string };
+      margin: { styleContent: string };
+      padding: { styleContent: string };
+      borderRadius: { styleContent: string };
+    };
+    type: string;
+    dataType: string;
+    name: string;
+    _id?: string;
+  };
+}
+
+export const RoomsTravel1: React.FC<RoomsProps> = (props) => {
+  const sectionStyles = props.Section;
+
+  const sectionContainerStyles = useMemo(() => {
+    return {
+      backgroundColor:
+        sectionStyles?.styleData?.backgroundColor?.styleContent || "#fff",
+      margin:
+        sectionStyles?.styleData?.margin?.styleContent || "0px 0px 0px 0px",
+      padding:
+        sectionStyles?.styleData?.padding?.styleContent || "0px 0px 0px 0px",
+      borderRadius:
+        sectionStyles?.styleData?.borderRadius?.styleContent ||
+        "0px 0px 0px 0px",
+    };
+  }, [
+    sectionStyles?.styleData?.backgroundColor?.styleContent,
+    sectionStyles?.styleData?.margin?.styleContent,
+    sectionStyles?.styleData?.padding?.styleContent,
+    sectionStyles?.styleData?.borderRadius?.styleContent,
+  ]);
+
   return (
-    <section className={styles.popular} id="destination">
+    <section
+      className={styles.popular}
+      id="destination"
+      style={sectionContainerStyles}
+    >
       <div className={styles.container}>
         <p className={styles.sectionSubtitle}>Uncover Place</p>
         <h2 className={styles.sectionTitle}>Popular Destination</h2>
@@ -118,4 +160,4 @@ export const HeroTravel1 = () => {
   );
 };
 
-export default HeroTravel1;
+export default RoomsTravel1;
